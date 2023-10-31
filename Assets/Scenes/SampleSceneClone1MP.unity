@@ -342,8 +342,8 @@ GameObject:
   - component: {fileID: 737173669}
   - component: {fileID: 737173668}
   - component: {fileID: 737173667}
-  - component: {fileID: 737173666}
   - component: {fileID: 737173672}
+  - component: {fileID: 737173673}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Player
@@ -351,25 +351,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &737173666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 737173665}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d67918d17b727cf40951bc5beac4efe4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveForce: 0.3
-  jumpForce: 8
-  maxSpeed: 10
-  maxHeight: 999
-  maxJumps: 2
-  rb: {fileID: 737173667}
-  playerCamera: {fileID: 963194228}
 --- !u!54 &737173667
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -490,11 +471,31 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 737173665}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d67918d17b727cf40951bc5beac4efe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveForce: 0.3
+  jumpForce: 8
+  maxSpeed: 10
+  maxHeight: 999
+  maxJumps: 2
+  rb: {fileID: 737173667}
+  playerCamera: {fileID: 2116227424}
+--- !u!114 &737173673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737173665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f85c583126d18e54ab4cf52072ed5fb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerNumber: 0
   moveForce: 0.3
   jumpForce: 8
   maxSpeed: 10

@@ -10,7 +10,7 @@ public class NewBallMovementDP : MonoBehaviour
         Player2
     }
 
-    public PlayerNumber playerNumber;  // To identify which player this script belongs to
+    public PlayerNumber playerNumber;  
 
     public float moveForce;
     public float jumpForce;
@@ -30,7 +30,6 @@ public class NewBallMovementDP : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
 
-        // Set the input strings based on the player number
         if (playerNumber == PlayerNumber.Player1)
         {
             horizontalInput = "Horizontal";
