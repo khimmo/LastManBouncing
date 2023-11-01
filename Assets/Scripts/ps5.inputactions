@@ -1,0 +1,54 @@
+{
+    "name": "ps5",
+    "maps": [
+        {
+            "name": "player1",
+            "id": "35eef51c-8ef1-4c3a-8702-52dde5222fbe",
+            "actions": [
+                {
+                    "name": "movement",
+                    "type": "Value",
+                    "id": "093d5fc2-cc40-4901-86ca-c9a84d78212b",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "jump",
+                    "type": "Button",
+                    "id": "358915f2-a17e-4840-b121-8d9cfc687266",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e0084f3a-129f-46bb-9070-0c50b8671a3c",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e1499315-dfea-40fd-abac-662289dd03f7",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
