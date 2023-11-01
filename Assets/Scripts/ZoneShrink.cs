@@ -20,21 +20,21 @@ public class ZoneShrink : MonoBehaviour
 
     void ShrinkZone()
     {
-        if(timer >= 40 && zoneIndex == 0)
+        if(timer >= 10 && zoneIndex == 0)
         {
             zoneLayer1.SetActive(false);
             timer = 0;
             zoneIndex++;
         }
 
-        if (timer >= 40 && zoneIndex == 1)
+        if (timer >= 10 && zoneIndex == 1)
         {
             zoneLayer2.SetActive(false);
             timer = 0;
             zoneIndex++;
         }
 
-        if (timer >= 40 && zoneIndex == 2)
+        if (timer >= 10 && zoneIndex == 2)
         {
             zoneLayer3.SetActive(false);
             timer = 0;
