@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class ZoneShrink : MonoBehaviour
 {
-    [SerializeField] private Rigidbody layer1rb;
-    [SerializeField] private Rigidbody layer2rb;
-    [SerializeField] private Rigidbody layer3rb;
-
     [SerializeField] private GameObject zoneLayer1;
     [SerializeField] private GameObject zoneLayer2;
     [SerializeField] private GameObject zoneLayer3;
@@ -24,41 +20,26 @@ public class ZoneShrink : MonoBehaviour
 
     void ShrinkZone()
     {
-        if(timer >= 5 && zoneIndex == 0)
+        if(timer >= 10 && zoneIndex == 0)
         {
-            Layer1Drop();
+            zoneLayer1.SetActive(false);
             timer = 0;
             zoneIndex++;
         }
 
-        if (timer >= 5 && zoneIndex == 1)
+        if (timer >= 10 && zoneIndex == 1)
         {
-            Layer2Drop();
+            zoneLayer2.SetActive(false);
             timer = 0;
             zoneIndex++;
         }
 
-        if (timer >= 5 && zoneIndex == 2)
+        if (timer >= 10 && zoneIndex == 2)
         {
-            Layer3Drop();
+            zoneLayer3.SetActive(false);
             timer = 0;
             zoneIndex++;
         }
-    }
-
-    void Layer1Drop()
-    {
-        layer1rb.constraints = RigidbodyConstraints.None;
-    }
-    
-    void Layer2Drop()
-    {
-        layer2rb.constraints = RigidbodyConstraints.None;
-    } 
-    
-    void Layer3Drop()
-    {
-        layer3rb.constraints = RigidbodyConstraints.None;
     }
 
     void Update()
