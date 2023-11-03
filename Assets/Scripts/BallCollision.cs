@@ -8,6 +8,14 @@ public class BallCollision : MonoBehaviour
     public float wallbounceForce;
     public float bounceForceMultiplier;
     public Rigidbody rb;
+    private NewBallMovementDP movementScript;
+
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+        movementScript = GetComponent<NewBallMovementDP>();
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -27,6 +35,8 @@ public class BallCollision : MonoBehaviour
             // Apply a bounce force to both balls
             rb.AddForce(bounceDirection * playerbounceForce, ForceMode.Impulse);
             otherBallRigidbody.AddForce(-bounceDirection * playerbounceForce, ForceMode.Impulse);
+
+            movementScript.StartBounceBoostCoroutine();
         }
 
         if (collision.gameObject.CompareTag("Wall"))

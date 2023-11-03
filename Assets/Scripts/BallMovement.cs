@@ -5,6 +5,7 @@ using UnityEngine;
 public class BallMovement : MonoBehaviour
 {
     public float moveForce;   // The force to apply when moving the ball
+    public float moveForceDefault; //The value for moveForce to reset to
     public float jumpForce;    // The force to apply when jumping
     public float maxSpeed;    // The maximum speed of the ball
     public float maxHeight;   // The maximum allowed height for the ball
@@ -44,10 +45,10 @@ public class BallMovement : MonoBehaviour
         // Apply impulses based on input
         if (movement.magnitude > 0.1f)
         {
-            //movement.z *= 2;
+           
             // Apply the force as an impulse to the Rigidbody
             rb.AddForce(movement * moveForce, ForceMode.Impulse);
-            //tutorialText.gameObject.SetActive(false);
+            
 
         }
 
@@ -55,8 +56,14 @@ public class BallMovement : MonoBehaviour
         Vector3 horizontalVelocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
         if (horizontalVelocity.magnitude > maxSpeed)
         {
-            horizontalVelocity = horizontalVelocity.normalized * maxSpeed;
-            rb.velocity = new Vector3(horizontalVelocity.x, rb.velocity.y, horizontalVelocity.z);
+            moveForce = 0f;
+            //horizontalVelocity = horizontalVelocity.normalized * maxSpeed;
+            //rb.velocity = new Vector3(horizontalVelocity.x, rb.velocity.y, horizontalVelocity.z);
+        }
+        
+        else
+        {
+            moveForce = moveForceDefault;
         }
 
         // Jump mechanic

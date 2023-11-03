@@ -13,8 +13,10 @@ public class NewBallMovementDP : MonoBehaviour
     public PlayerNumber playerNumber;  
 
     public float moveForce;
+    public float moveForceDefault;
     public float jumpForce;
     public float maxSpeed;
+    public float originalMaxSpeed;
     public float maxHeight;
     public int maxJumps;
     private int jumpsRemaining;
@@ -25,9 +27,14 @@ public class NewBallMovementDP : MonoBehaviour
     private string horizontalInput;
     private string verticalInput;
     private string jumpInput;
+    private bool isBounceBoosted = false;
+    private float currentTransitionTime = 0f;
+    //private float totalTransitionDuration = 2f;
 
     private void Start()
     {
+        originalMaxSpeed = maxSpeed;
+
         rb = GetComponent<Rigidbody>();
 
         if (playerNumber == PlayerNumber.Player1)
@@ -46,6 +53,24 @@ public class NewBallMovementDP : MonoBehaviour
 
     private void Update()
     {
+
+        if (isBounceBoosted)
+        {
+            // Check if the speed boost duration has elapsed
+            if (Time.time >= bounceBoostEndTime)
+            {
+                isBounceBoosted = false;
+                currentTransitionTime = 0f;
+            }
+        }
+
+        if (currentTransitionTime < bounceBoostDuration)
+        {
+            currentTransitionTime += Time.deltaTime;
+            maxSpeed = Mathf.Lerp(15f, originalMaxSpeed, currentTransitionTime / bounceBoostDuration);
+        }
+
+
         isGrounded = Physics.Raycast(transform.position, Vector3.down, 0.4f);
 
         float moveVertical = Input.GetAxis(horizontalInput);
@@ -63,10 +88,24 @@ public class NewBallMovementDP : MonoBehaviour
         }
 
         Vector3 horizontalVelocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+        //if (horizontalVelocity.magnitude > maxSpeed)
+        //{
+            //moveForce = 0f;
+           // horizontalVelocity = horizontalVelocity.normalized * maxSpeed;
+            //rb.velocity = new Vector3(horizontalVelocity.x, rb.velocity.y, horizontalVelocity.z);
+        //}
+
         if (horizontalVelocity.magnitude > maxSpeed)
         {
+            //moveForce = 0f;
             horizontalVelocity = horizontalVelocity.normalized * maxSpeed;
             rb.velocity = new Vector3(horizontalVelocity.x, rb.velocity.y, horizontalVelocity.z);
+        }
+
+        else
+        {
+            moveForce = moveForceDefault;
         }
 
         if (isGrounded)
@@ -79,5 +118,29 @@ public class NewBallMovementDP : MonoBehaviour
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             jumpsRemaining--;
         }
+    }
+
+    public void StartBounceBoostCoroutine()
+    {
+        if (!isBounceBoosted)
+        {
+            StartCoroutine(BounceBoostCoroutine());
+        }
+    }
+
+    private float bounceBoostDuration = 0.5f;
+    private float bounceBoostEndTime;
+
+    private IEnumerator BounceBoostCoroutine()
+    {
+        isBounceBoosted = true;
+        maxSpeed = 15f; // Increase maxSpeed
+        bounceBoostEndTime = Time.time + bounceBoostDuration;
+
+        // Wait for the speed boost duration to elapse
+        yield return new WaitForSeconds(bounceBoostDuration);
+
+        isBounceBoosted = false;
+        currentTransitionTime = 0f;
     }
 }
