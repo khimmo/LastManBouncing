@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Linq;
+using System.Net.Sockets;
 using UnityEngine;
 
 public class ZoneShrink : MonoBehaviour
@@ -49,6 +50,7 @@ public class ZoneShrink : MonoBehaviour
     void Layer1Drop()
     {
         layer1rb.constraints = RigidbodyConstraints.None;
+        transform.Translate(Vector3.down * Time.deltaTime);
     }
     
     void Layer2Drop()
