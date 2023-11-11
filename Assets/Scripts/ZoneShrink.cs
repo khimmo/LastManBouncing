@@ -8,9 +8,9 @@ public class ZoneShrink : MonoBehaviour
     [SerializeField] private Rigidbody layer2rb;
     [SerializeField] private Rigidbody layer3rb;
 
-    [SerializeField] private GameObject zoneLayer1;
-    [SerializeField] private GameObject zoneLayer2;
-    [SerializeField] private GameObject zoneLayer3;
+    [SerializeField] public GameObject zoneLayer1;
+    [SerializeField] public GameObject zoneLayer2;
+    [SerializeField] public GameObject zoneLayer3;
 
     [SerializeField] private float timer ;
 
