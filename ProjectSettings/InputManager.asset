@@ -102,7 +102,7 @@ InputManager:
     axis: 1
     joyNum: 1
   - serializedVersion: 3
-    m_Name: Vertical_P2
+    m_Name: Vertical_P22
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: down

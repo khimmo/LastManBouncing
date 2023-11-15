@@ -2487,15 +2487,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff96a2c5c1f6e4746b198aced2253ccb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNumber: 0
-  moveForce: 0
-  moveForceDefault: 0
-  jumpForce: 0
-  maxSpeed: 0
-  originalMaxSpeed: 0
-  maxHeight: 0
+  playerNumber: 1
+  moveForce: 0.3
+  moveForceDefault: 0.3
+  jumpForce: 8
+  maxSpeed: 9
+  originalMaxSpeed: 9
+  maxHeight: 9999
   rayCastLength: 0
-  maxJumps: 0
+  maxJumps: 2
   jumpsRemaining: 0
   rb: {fileID: 1954409338}
   playerCamera: {fileID: 1055418800}
