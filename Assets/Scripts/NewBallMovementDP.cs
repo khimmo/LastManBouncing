@@ -18,8 +18,9 @@ public class NewBallMovementDP : MonoBehaviour
     public float maxSpeed;
     public float originalMaxSpeed;
     public float maxHeight;
+    public float rayCastLength;
     public int maxJumps;
-    private int jumpsRemaining;
+    public int jumpsRemaining;
     private bool isGrounded;
     public Rigidbody rb;
     public Transform playerCamera;
@@ -70,8 +71,8 @@ public class NewBallMovementDP : MonoBehaviour
             maxSpeed = Mathf.Lerp(15f, originalMaxSpeed, currentTransitionTime / bounceBoostDuration);
         }
 
-
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, 0.4f);
+        rayCastLength = transform.localScale.x * 0.5f;
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, rayCastLength);
 
         float moveVertical = Input.GetAxis(horizontalInput);
         float moveHorizontal = Input.GetAxis(verticalInput);
@@ -142,5 +143,31 @@ public class NewBallMovementDP : MonoBehaviour
 
         isBounceBoosted = false;
         currentTransitionTime = 0f;
+    }
+
+    public void StartSpeedBoostCoroutine(float speedMultiplier, float jumpForceBoost, float moveForceBoost, float speedBoostDuration)
+    {
+        StartCoroutine(SpeedBoostCoroutine(speedMultiplier, jumpForceBoost, moveForceBoost, speedBoostDuration));
+    }
+
+    private IEnumerator SpeedBoostCoroutine(float speedMultiplier, float jumpForceBoost, float moveForceBoost, float speedBoostDuration)
+    {
+        // Store the original values
+        float originalMaxSpeed = maxSpeed;
+        float originalJumpForce = jumpForce;
+        float originalMoveForce = moveForce;
+
+        // Apply the speed boost
+        maxSpeed *= speedMultiplier;
+        jumpForce *= jumpForceBoost;
+        moveForce *= moveForceBoost;
+
+        // Wait for the duration of the speed boost
+        yield return new WaitForSeconds(speedBoostDuration);
+
+        // Restore the original values
+        maxSpeed = originalMaxSpeed;
+        jumpForce = originalJumpForce;
+        moveForce = originalMoveForce;
     }
 }
