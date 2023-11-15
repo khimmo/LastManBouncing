@@ -121,6 +121,11 @@ public class NewBallMovementDP : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+
+    }
+
     public void StartBounceBoostCoroutine()
     {
         if (!isBounceBoosted)
