@@ -24,7 +24,6 @@ public class NewBallMovementDP : MonoBehaviour
     public Rigidbody rb;
     public Transform playerCamera;
     public bool grounded;
-    public float originalJumpForce;
 
     private string horizontalInput;
     private string verticalInput;
