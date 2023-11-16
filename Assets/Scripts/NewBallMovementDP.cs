@@ -17,13 +17,13 @@ public class NewBallMovementDP : MonoBehaviour
     public float jumpForce;
     public float maxSpeed;
     public float originalMaxSpeed;
-    public float maxHeight;
     public float rayCastLength;
     public int maxJumps;
     public int jumpsRemaining;
     private bool isGrounded;
     public Rigidbody rb;
     public Transform playerCamera;
+    public bool grounded;
 
     private string horizontalInput;
     private string verticalInput;
@@ -52,6 +52,43 @@ public class NewBallMovementDP : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        
+
+        float moveVertical = Input.GetAxis(horizontalInput);
+        float moveHorizontal = Input.GetAxis(verticalInput);
+
+        Vector3 cameraForward = playerCamera.forward;
+        Vector3 cameraRight = playerCamera.right;
+        cameraForward.y = 0f;
+        cameraRight.y = 0f;
+        Vector3 movement = cameraForward.normalized * moveHorizontal + cameraRight.normalized * moveVertical;
+
+        if (movement.magnitude > 0.1f)
+        {
+            rb.AddForce(movement * moveForce, ForceMode.Impulse);
+        }
+
+        Vector3 horizontalVelocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+
+        if (horizontalVelocity.magnitude > maxSpeed)
+        {
+            //moveForce = 0f;
+            horizontalVelocity = horizontalVelocity.normalized * maxSpeed;
+            rb.velocity = new Vector3(horizontalVelocity.x, rb.velocity.y, horizontalVelocity.z);
+        }
+
+        else
+        {
+            moveForce = moveForceDefault;
+        }
+
+        
+
+    }
+
     private void Update()
     {
 
@@ -71,54 +108,29 @@ public class NewBallMovementDP : MonoBehaviour
             maxSpeed = Mathf.Lerp(15f, originalMaxSpeed, currentTransitionTime / bounceBoostDuration);
         }
 
-        rayCastLength = transform.localScale.x * 0.5f;
+        rayCastLength = transform.localScale.x * 0.5f + 0.01f;
+        //Ground Check
         isGrounded = Physics.Raycast(transform.position, Vector3.down, rayCastLength);
-
-        float moveVertical = Input.GetAxis(horizontalInput);
-        float moveHorizontal = Input.GetAxis(verticalInput);
-
-        Vector3 cameraForward = playerCamera.forward;
-        Vector3 cameraRight = playerCamera.right;
-        cameraForward.y = 0f;
-        cameraRight.y = 0f;
-        Vector3 movement = cameraForward.normalized * moveHorizontal + cameraRight.normalized * moveVertical;
-
-        if (movement.magnitude > 0.1f)
-        {
-            rb.AddForce(movement * moveForce, ForceMode.Impulse);
-        }
-
-        Vector3 horizontalVelocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
-
-        //if (horizontalVelocity.magnitude > maxSpeed)
-        //{
-            //moveForce = 0f;
-           // horizontalVelocity = horizontalVelocity.normalized * maxSpeed;
-            //rb.velocity = new Vector3(horizontalVelocity.x, rb.velocity.y, horizontalVelocity.z);
-        //}
-
-        if (horizontalVelocity.magnitude > maxSpeed)
-        {
-            //moveForce = 0f;
-            horizontalVelocity = horizontalVelocity.normalized * maxSpeed;
-            rb.velocity = new Vector3(horizontalVelocity.x, rb.velocity.y, horizontalVelocity.z);
-        }
-
-        else
-        {
-            moveForce = moveForceDefault;
-        }
-
-        if (isGrounded)
-        {
-            jumpsRemaining = maxJumps;
-        }
+        
+        
 
         if (Input.GetButtonDown(jumpInput) && jumpsRemaining > 0)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             jumpsRemaining--;
         }
+
+        if (isGrounded)
+        {
+            jumpsRemaining = maxJumps;
+            grounded = true;
+        }
+        else
+        {
+            grounded = false;
+        }
+
+
     }
 
     public void StartBounceBoostCoroutine()

@@ -568,17 +568,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNumber: 0
-  moveForce: 0.3
-  moveForceDefault: 0.3
+  moveForce: 0.5
+  moveForceDefault: 0.5
   jumpForce: 8
   maxSpeed: 9
   originalMaxSpeed: 9
-  maxHeight: 9999
   rayCastLength: 0
-  maxJumps: 2
+  maxJumps: 1
   jumpsRemaining: 0
   rb: {fileID: 737173667}
   playerCamera: {fileID: 2116227424}
+  grounded: 0
 --- !u!114 &737173674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2493,12 +2493,12 @@ MonoBehaviour:
   jumpForce: 8
   maxSpeed: 9
   originalMaxSpeed: 9
-  maxHeight: 9999
   rayCastLength: 0
   maxJumps: 2
   jumpsRemaining: 0
   rb: {fileID: 1954409338}
   playerCamera: {fileID: 1055418800}
+  grounded: 0
 --- !u!54 &1954409338
 Rigidbody:
   m_ObjectHideFlags: 0
