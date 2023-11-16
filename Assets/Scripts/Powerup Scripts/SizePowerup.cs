@@ -31,6 +31,7 @@ public class SizePowerup : MonoBehaviour
         if (NewBallMovementDP != null)
         {
             NewBallMovementDP.jumpForce *= jumpForceIncreasePercentage;
+            NewBallMovementDP.originalJumpForce *= jumpForceIncreasePercentage;
             NewBallMovementDP.moveForceDefault *= jumpForceIncreasePercentage;
         }
     }
