@@ -8,10 +8,16 @@ public class ZoneShrink : MonoBehaviour
     [SerializeField] private Rigidbody layer1rb;
     [SerializeField] private Rigidbody layer2rb;
     [SerializeField] private Rigidbody layer3rb;
+    [SerializeField] private Rigidbody layer4rb;
+    [SerializeField] private Rigidbody layer5rb;
+    [SerializeField] private Rigidbody layer6rb;
 
     [SerializeField] public GameObject zoneLayer1;
     [SerializeField] public GameObject zoneLayer2;
     [SerializeField] public GameObject zoneLayer3;
+    [SerializeField] public GameObject zoneLayer4;
+    [SerializeField] public GameObject zoneLayer5;
+    [SerializeField] public GameObject zoneLayer6;
 
     [SerializeField] private float timer ;
 
@@ -25,7 +31,7 @@ public class ZoneShrink : MonoBehaviour
 
     void ShrinkZone()
     {
-        if(timer >= 5 && zoneIndex == 0)
+        if (timer >= 5 && zoneIndex == 0)
         {
             Layer1Drop();
             timer = 0;
@@ -45,12 +51,34 @@ public class ZoneShrink : MonoBehaviour
             timer = 0;
             zoneIndex++;
         }
-    }
 
+        if (timer >= 5 && zoneIndex == 3)
+        {
+            layer4Drop();
+            timer = 0;
+            zoneIndex++;
+
+        }
+
+        if (timer >= 5 && zoneIndex == 4)
+        {
+            Layer5Drop();
+            timer = 0;
+            zoneIndex++;
+        }
+
+        if (timer >= 5 && zoneIndex == 5)
+        {
+            Layer6Drop();
+            timer = 0;
+            zoneIndex++;
+        }
+
+    }
     void Layer1Drop()
     {
         layer1rb.constraints = RigidbodyConstraints.None;
-        transform.Translate(Vector3.down * Time.deltaTime);
+        //transform.Translate(Vector3.down * Time.deltaTime);
     }
     
     void Layer2Drop()
@@ -62,6 +90,22 @@ public class ZoneShrink : MonoBehaviour
     {
         layer3rb.constraints = RigidbodyConstraints.None;
     }
+
+    void layer4Drop()
+    {
+        layer4rb.constraints = RigidbodyConstraints.None;
+    }
+
+    void Layer5Drop()
+    {
+        layer5rb.constraints = RigidbodyConstraints.None;
+    }
+
+    void Layer6Drop()
+    {
+        layer6rb.constraints = RigidbodyConstraints.None;
+    }
+        
 
     void Update()
     {
