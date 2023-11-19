@@ -4,9 +4,6 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/Khalid Scene Week 8.unity
-    guid: ed13c677a93520643a17722896c2ec76
+  m_Scenes: []
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
