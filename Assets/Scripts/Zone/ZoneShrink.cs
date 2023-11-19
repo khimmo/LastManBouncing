@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net.Sockets;
 using TMPro;
@@ -22,6 +23,12 @@ public class ZoneShrink : MonoBehaviour
     [SerializeField] public GameObject zoneLayer5;
     [SerializeField] public GameObject zoneLayer6;
     [SerializeField] public GameObject zoneLayer7;
+
+    [SerializeField] List<GameObject> layer1Assets = new List<GameObject>();
+    [SerializeField] List<GameObject> layer2Assets = new List<GameObject>();
+    [SerializeField] List<GameObject> layer3Assets = new List<GameObject>();
+    [SerializeField] List<GameObject> layer4Assets = new List<GameObject>();
+    [SerializeField] List<GameObject> layer5Assets = new List<GameObject>();
 
     [SerializeField] private float timer = 25f;
 
@@ -89,49 +96,76 @@ public class ZoneShrink : MonoBehaviour
 
     IEnumerator Layer1Drop()
     {
-        layer1rb.constraints = RigidbodyConstraints.None;
+        layer1rb.useGravity = true;
+        layer1rb.isKinematic = false;
+        foreach(var item in layer1Assets)
+        {
+            item.gameObject.SetActive(false);
+        }
         yield return new WaitForSeconds(3);
         Destroy(zoneLayer1);
     }
 
     IEnumerator Layer2Drop()
     {
-        layer2rb.constraints = RigidbodyConstraints.None;
+        layer2rb.useGravity = true;
+        layer2rb.isKinematic = false;
+        foreach (var item in layer2Assets)
+        {
+            item.gameObject.SetActive(false);
+        }
         yield return new WaitForSeconds(3);
         Destroy(zoneLayer2);
     }
 
     IEnumerator Layer3Drop()
     {
-        layer3rb.constraints = RigidbodyConstraints.None;
+        layer3rb.useGravity = true;
+        layer3rb.isKinematic = false;
+        foreach (var item in layer3Assets)
+        {
+            item.gameObject.SetActive(false);
+        }
         yield return new WaitForSeconds(3);
         Destroy(zoneLayer3);
     }
 
     IEnumerator layer4Drop()
     {
-        layer4rb.constraints = RigidbodyConstraints.None;
+        layer4rb.useGravity = true;
+        layer4rb.isKinematic = false;
+        foreach (var item in layer4Assets)
+        {
+            item.gameObject.SetActive(false);
+        }
         yield return new WaitForSeconds(3);
         Destroy(zoneLayer4);
     }
 
     IEnumerator Layer5Drop()
     {
-        layer5rb.constraints = RigidbodyConstraints.None;
+        layer5rb.useGravity = true;
+        layer5rb.isKinematic = false;
+        foreach (var item in layer5Assets)
+        {
+            item.gameObject.SetActive(false);
+        }
         yield return new WaitForSeconds(3);
         Destroy(zoneLayer5);
     }
 
     IEnumerator Layer6Drop()
     {
-        layer6rb.constraints = RigidbodyConstraints.None;
+        layer6rb.useGravity = true;
+        layer6rb.isKinematic = false;
         yield return new WaitForSeconds(3);
         Destroy(zoneLayer6);
     }
 
     IEnumerator Layer7drop()
     {
-        layer7rb.constraints = RigidbodyConstraints.None;
+        layer7rb.useGravity = true;
+        layer7rb.isKinematic = false;
         yield return new WaitForSeconds(3);
         Destroy(zoneLayer7);
     }
