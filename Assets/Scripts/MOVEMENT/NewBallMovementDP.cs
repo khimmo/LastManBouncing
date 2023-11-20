@@ -43,7 +43,7 @@ public class NewBallMovementDP : MonoBehaviour
         {
             horizontalInput = "Horizontal";
             verticalInput = "Vertical";
-            jumpInput = "Jump";
+            jumpInput = "Jump_P1";
         }
         else if (playerNumber == PlayerNumber.Player2)
         {
