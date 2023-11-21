@@ -31,6 +31,8 @@ public class ZoneShrink : MonoBehaviour
     [SerializeField] List<GameObject> layer5Assets = new List<GameObject>();
 
     [SerializeField] private float timer = 25f;
+    public float timerDefault;
+    public float zoneDestroyTimer;
 
     [SerializeField] private int zoneIndex = 0;
 
@@ -47,49 +49,49 @@ public class ZoneShrink : MonoBehaviour
         if (timer <= 0 && zoneIndex == 0)
         {
             StartCoroutine(Layer1Drop());
-            timer = 25 ;
+            timer = timerDefault;
             zoneIndex++;
         }
 
         if (timer <= 0 && zoneIndex == 1)
         {
             StartCoroutine(Layer2Drop());
-            timer = 25;
+            timer = timerDefault;
             zoneIndex++;
         }
 
         if (timer <= 0 && zoneIndex == 2)
         {
             StartCoroutine(Layer3Drop());
-            timer = 25;
+            timer = timerDefault;
             zoneIndex++;
         }
 
         if (timer <= 0 && zoneIndex == 3)
         {
             StartCoroutine(layer4Drop());
-            timer = 25;
+            timer = timerDefault;
             zoneIndex++;
         }
 
         if (timer <= 0 && zoneIndex == 4)
         {
             StartCoroutine(Layer5Drop());
-            timer = 25;
+            timer = timerDefault;
             zoneIndex++;
         }
 
         if (timer <= 0 && zoneIndex == 5)
         {
             StartCoroutine(Layer6Drop());
-            timer = 25;
+            timer = timerDefault;
             zoneIndex++;
         }
 
         if(timer <= 0 && zoneIndex == 6)
         {
             StartCoroutine(Layer7drop());
-            timer = 25;
+            timer = timerDefault;
             zoneIndex++;
         }
     }
@@ -102,7 +104,7 @@ public class ZoneShrink : MonoBehaviour
         {
             item.gameObject.SetActive(false);
         }
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(zoneDestroyTimer);
         Destroy(zoneLayer1);
     }
 
@@ -114,7 +116,7 @@ public class ZoneShrink : MonoBehaviour
         {
             item.gameObject.SetActive(false);
         }
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(zoneDestroyTimer);
         Destroy(zoneLayer2);
     }
 
@@ -126,7 +128,7 @@ public class ZoneShrink : MonoBehaviour
         {
             item.gameObject.SetActive(false);
         }
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(zoneDestroyTimer);
         Destroy(zoneLayer3);
     }
 
@@ -138,7 +140,7 @@ public class ZoneShrink : MonoBehaviour
         {
             item.gameObject.SetActive(false);
         }
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(zoneDestroyTimer);
         Destroy(zoneLayer4);
     }
 
@@ -150,7 +152,7 @@ public class ZoneShrink : MonoBehaviour
         {
             item.gameObject.SetActive(false);
         }
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(zoneDestroyTimer);
         Destroy(zoneLayer5);
     }
 
@@ -158,7 +160,7 @@ public class ZoneShrink : MonoBehaviour
     {
         layer6rb.useGravity = true;
         layer6rb.isKinematic = false;
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(zoneDestroyTimer);
         Destroy(zoneLayer6);
     }
 
@@ -166,7 +168,7 @@ public class ZoneShrink : MonoBehaviour
     {
         layer7rb.useGravity = true;
         layer7rb.isKinematic = false;
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(zoneDestroyTimer);
         Destroy(zoneLayer7);
     }
 
