@@ -7,6 +7,7 @@ public class SizePowerup : MonoBehaviour
     public float massIncreasePercentage = 1.75f;
     public float radiusIncreasePercentage = 1.20f;
     public float jumpForceIncreasePercentage = 1.75f;
+    public float bounceIncreasePercentage = 1.5f;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -32,6 +33,12 @@ public class SizePowerup : MonoBehaviour
         {
             NewBallMovementDP.jumpForce *= jumpForceIncreasePercentage;
             NewBallMovementDP.moveForceDefault *= jumpForceIncreasePercentage;
+        }
+
+        BallCollision BallCollision = ballRb.GetComponent<BallCollision>();
+        if (BallCollision != null)
+        {
+            BallCollision.bounceForceMultiplier *= bounceIncreasePercentage;
         }
     }
 }
