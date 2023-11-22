@@ -46,7 +46,14 @@ public class ZoneShrink : MonoBehaviour
     void Timer()
     {
         timer -= Time.deltaTime;
-        timerText.text = string.Format("Time until zone shrink: " + Mathf.Round(timer));
+        if (zoneIndex < 7)
+        {
+            timerText.text = string.Format("Zone collapses in: " + Mathf.Round(timer) + "!");
+        }
+        else {
+            timerText.text = string.Format("");
+             }
+            
     }
 
     void ShrinkZone()
