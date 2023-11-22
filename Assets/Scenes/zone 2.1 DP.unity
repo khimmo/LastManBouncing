@@ -424,7 +424,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 578df919bd5f19246856e40cd3db4735, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: f30db9612a9286a4fa735a3bab70d5ff, type: 2}
+      objectReference: {fileID: 2100000, guid: 5ed8fabeb8d3e3543b5facbcfe014b2b, type: 2}
     - target: {fileID: 919132149155446097, guid: 578df919bd5f19246856e40cd3db4735, type: 3}
       propertyPath: m_Name
       value: Hollow cyclinder 2 (4)
@@ -1047,7 +1047,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 578df919bd5f19246856e40cd3db4735, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: e28b7c30bcddeb24d975c0d5ca1a7211, type: 2}
+      objectReference: {fileID: 2100000, guid: c5a8147fa8f0a9846b7b947e950fff45, type: 2}
     - target: {fileID: 919132149155446097, guid: 578df919bd5f19246856e40cd3db4735, type: 3}
       propertyPath: m_Name
       value: Hollow cyclinder 2
@@ -2659,7 +2659,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 578df919bd5f19246856e40cd3db4735, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 21493ea16e77c5948b98a766e2ae535f, type: 2}
+      objectReference: {fileID: 2100000, guid: 4ffe5e99ad55a644385aa5bb177a27b3, type: 2}
     - target: {fileID: 919132149155446097, guid: 578df919bd5f19246856e40cd3db4735, type: 3}
       propertyPath: m_Name
       value: Hollow cyclinder 2 (3)
@@ -5628,7 +5628,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 3fceb832117648c44a003b6b282d35c5, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: bd03a51dcd2de224bb2450c3f3a244ff, type: 2}
+      objectReference: {fileID: 2100000, guid: 4b47dc59aeaebd14d9f884444f1d5a05, type: 2}
     - target: {fileID: 919132149155446097, guid: 3fceb832117648c44a003b6b282d35c5, type: 3}
       propertyPath: m_Name
       value: cylinder
@@ -6020,7 +6020,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 578df919bd5f19246856e40cd3db4735, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: b68614290e5d3854fadfc7849fdd1128, type: 2}
+      objectReference: {fileID: 2100000, guid: fba29cd12d2d66b4b8b5c14bdb65ac1a, type: 2}
     - target: {fileID: 919132149155446097, guid: 578df919bd5f19246856e40cd3db4735, type: 3}
       propertyPath: m_Name
       value: Hollow cyclinder 2 (1)
@@ -6111,7 +6111,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 578df919bd5f19246856e40cd3db4735, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 8f5f87443f123db41b3bffef26b031e6, type: 2}
+      objectReference: {fileID: 2100000, guid: 00f5b75d17950454cb6de1ef429bc104, type: 2}
     - target: {fileID: 919132149155446097, guid: 578df919bd5f19246856e40cd3db4735, type: 3}
       propertyPath: m_Name
       value: Hollow cyclinder 2 (6)
@@ -6268,7 +6268,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 578df919bd5f19246856e40cd3db4735, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 1060331987461cd4aa1718a7cb7d21e1, type: 2}
+      objectReference: {fileID: 2100000, guid: adf8b867d0b962b44898bf2856260e2d, type: 2}
     - target: {fileID: 919132149155446097, guid: 578df919bd5f19246856e40cd3db4735, type: 3}
       propertyPath: m_Name
       value: Hollow cyclinder 2 (5)
@@ -7254,7 +7254,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 578df919bd5f19246856e40cd3db4735, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 03da9320327561b47a0c90f87f409b2f, type: 2}
+      objectReference: {fileID: 2100000, guid: fbe696f1778b94e40b56b51886ecb247, type: 2}
     - target: {fileID: 919132149155446097, guid: 578df919bd5f19246856e40cd3db4735, type: 3}
       propertyPath: m_Name
       value: Hollow cyclinder 2 (2)

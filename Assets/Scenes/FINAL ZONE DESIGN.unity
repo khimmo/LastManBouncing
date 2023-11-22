@@ -505,8 +505,8 @@ MonoBehaviour:
   layer3Assets: []
   layer4Assets: []
   layer5Assets: []
-  timer: 25
-  timerDefault: 25
+  timer: 5
+  timerDefault: 5
   zoneDestroyTimer: 3
   zoneIndex: 0
   timerText: {fileID: 678083998}
