@@ -7,6 +7,9 @@ public class SizePowerup : MonoBehaviour
     public float massIncreasePercentage = 1.75f;
     public float radiusIncreasePercentage = 1.20f;
     public float jumpForceIncreasePercentage = 1.75f;
+    
+
+    
 
     private void OnTriggerEnter(Collider other)
     {
@@ -31,7 +34,10 @@ public class SizePowerup : MonoBehaviour
         if (NewBallMovementDP != null)
         {
             NewBallMovementDP.jumpForce *= jumpForceIncreasePercentage;
+            NewBallMovementDP.jumpForceDefault *= jumpForceIncreasePercentage;
             NewBallMovementDP.moveForceDefault *= jumpForceIncreasePercentage;
         }
     }
+
+
 }

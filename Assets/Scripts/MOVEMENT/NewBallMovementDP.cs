@@ -15,6 +15,7 @@ public class NewBallMovementDP : MonoBehaviour
     public float moveForce;
     public float moveForceDefault;
     public float jumpForce;
+    public float jumpForceDefault;
     public float maxSpeed;
     public float originalMaxSpeed;
     public float rayCastLength;
@@ -24,8 +25,7 @@ public class NewBallMovementDP : MonoBehaviour
     public Rigidbody rb;
     public Transform playerCamera;
     public bool grounded;
-    public float originalJumpForce = 8;
-
+    public float originalJumpForce;
     private string horizontalInput;
     private string verticalInput;
     private string jumpInput;
@@ -36,6 +36,7 @@ public class NewBallMovementDP : MonoBehaviour
     private void Start()
     {
         originalMaxSpeed = maxSpeed;
+        jumpForce = jumpForceDefault;
 
         rb = GetComponent<Rigidbody>();
 
@@ -92,6 +93,10 @@ public class NewBallMovementDP : MonoBehaviour
 
     private void Update()
     {
+        if (jumpForce < jumpForceDefault)
+        {
+            jumpForce = jumpForceDefault;
+        }
 
         if (isBounceBoosted)
         {
