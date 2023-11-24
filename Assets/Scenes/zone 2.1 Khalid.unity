@@ -2313,6 +2313,10 @@ PrefabInstance:
       propertyPath: playerNumber
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3606453492178758710, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
+      propertyPath: jumpForceDefault
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8533106654184019188, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
       propertyPath: m_Name
       value: Sphere2

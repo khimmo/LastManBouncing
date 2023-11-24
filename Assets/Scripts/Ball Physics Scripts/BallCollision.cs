@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class BallCollision : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class BallCollision : MonoBehaviour
     public float bounceForceMultiplier;
     public Rigidbody rb;
     private NewBallMovementDP movementScript;
+    
+    
 
 
     private void Start()
@@ -25,6 +28,9 @@ public class BallCollision : MonoBehaviour
             // Get the Rigidbody of the other ball
             Rigidbody otherBallRigidbody = collision.gameObject.GetComponent<Rigidbody>();
 
+            float massRatio = rb.mass / otherBallRigidbody.mass;
+            double adjustedMassRatioDouble = Math.Pow(massRatio, 0.4f);
+            float adjustedMassRatio = (float)adjustedMassRatioDouble;
             float totalVelocity = rb.velocity.magnitude + otherBallRigidbody.velocity.magnitude;
 
             float playerbounceForce = totalVelocity * bounceForceMultiplier;
@@ -34,7 +40,7 @@ public class BallCollision : MonoBehaviour
 
             // Apply a bounce force to both balls
             rb.AddForce(bounceDirection * playerbounceForce, ForceMode.Impulse);
-            otherBallRigidbody.AddForce(-bounceDirection * playerbounceForce, ForceMode.Impulse);
+            otherBallRigidbody.AddForce(-bounceDirection * playerbounceForce * adjustedMassRatio, ForceMode.Impulse);
 
             movementScript.StartBounceBoostCoroutine();
         }
