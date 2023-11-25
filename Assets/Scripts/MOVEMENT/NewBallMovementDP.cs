@@ -30,6 +30,7 @@ public class NewBallMovementDP : MonoBehaviour
     private string verticalInput;
     private string jumpInput;
     private bool isBounceBoosted = false;
+    public bool controlsInverted;
     private float currentTransitionTime = 0f;
     //private float totalTransitionDuration = 2f;
 
@@ -54,12 +55,33 @@ public class NewBallMovementDP : MonoBehaviour
         }
     }
 
+    public void InvertControls()
+    {
+        controlsInverted = true;
+    }
+
+    public void RevertControls()
+    {
+        controlsInverted = false;
+    }
+
     private void FixedUpdate()
     {
+
+
         
 
         float moveVertical = Input.GetAxis(horizontalInput);
         float moveHorizontal = Input.GetAxis(verticalInput);
+
+        if (controlsInverted == true)
+        {
+            // Invert movement inputs
+            moveVertical = -moveVertical;
+            moveHorizontal = -moveHorizontal;
+        }
+
+
 
         Vector3 cameraForward = playerCamera.forward;
         Vector3 cameraRight = playerCamera.right;
@@ -97,6 +119,8 @@ public class NewBallMovementDP : MonoBehaviour
         {
             jumpForce = jumpForceDefault;
         }
+
+        
 
         if (isBounceBoosted)
         {
@@ -187,5 +211,22 @@ public class NewBallMovementDP : MonoBehaviour
         maxSpeed = originalMaxSpeed;
         jumpForce = originalJumpForce;
         moveForce = originalMoveForce;
+    }
+
+    public void StartInvertControlsCoroutine()
+    {
+        StartCoroutine(InvertControlsCoroutine());
+    }
+
+    private IEnumerator InvertControlsCoroutine()
+    {
+        // Invert the controls
+        InvertControls();
+
+        // Wait for a specified duration
+        yield return new WaitForSeconds(7f);
+
+        // Revert the controls after the duration
+        RevertControls();
     }
 }

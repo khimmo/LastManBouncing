@@ -10,7 +10,7 @@ public class BallCollision : MonoBehaviour
     public float bounceForceMultiplier;
     public Rigidbody rb;
     private NewBallMovementDP movementScript;
-    
+    public bool isConfuser;
     
 
 
@@ -43,9 +43,32 @@ public class BallCollision : MonoBehaviour
             otherBallRigidbody.AddForce(-bounceDirection * playerbounceForce * adjustedMassRatio, ForceMode.Impulse);
 
             movementScript.StartBounceBoostCoroutine();
+
+            //NewBallMovementDP otherBallStatus = collision.gameObject.GetComponent<NewBallMovementDP>();
+            //bool isOtherBallConfuser = otherBallStatus != null && otherBallStatus.IsConfuser();
         }
 
-        if (collision.gameObject.CompareTag("Wall"))
+        if (collision.gameObject.CompareTag("Player") && isConfuser == true)
+        {
+            ApplyConfusion(collision.gameObject.GetComponent<NewBallMovementDP>());
+            isConfuser = false;
+            Debug.Log("Confused!");
+        }
+
+        void ApplyConfusion(NewBallMovementDP playerMovement)
+        {
+            if (playerMovement != null)
+            {
+                // Start the coroutine to invert controls for a duration
+                //StartCoroutine(InvertControlsCoroutine(playerMovement));
+                playerMovement.StartInvertControlsCoroutine();
+                Debug.Log("I am Confused!");
+            }
+        }
+
+
+
+            if (collision.gameObject.CompareTag("Wall"))
         {
             // Get the Rigidbody of the other ball
             //Rigidbody otherBallRigidbody = collision.gameObject.GetComponent<Rigidbody>();
@@ -57,5 +80,10 @@ public class BallCollision : MonoBehaviour
             rb.AddForce(bounceDirection * wallbounceForce, ForceMode.Impulse);
             //otherBallRigidbody.AddForce(-bounceDirection * wallbounceForce, ForceMode.Impulse);
         }
+    }
+
+    public void IsConfuser()
+    {
+        isConfuser = true;
     }
 }

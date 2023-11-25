@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedBoostMultiplier: 1.5
-  jumpForceBoost: 1.25
+  jumpForceBoost: 1.15
   moveForceBoost: 1.25
   speedBoostDuration: 10
 --- !u!136 &4417727949180056415
