@@ -5,6 +5,26 @@ using UnityEngine;
 public class ShockwavePowerup : MonoBehaviour
 {
 
+    //public Transform camera;
+    public Vector3 cameraLocation;
+    private Camera cam;
+    private void Start()
+    {
+        //mainCamera = Camera.main;
+        cam = Camera.main;
+
+
+
+    }
+
+    private void Update()
+    {
+        //cameraLocation = camera.cameraPosition;
+        //DynamicCamera camera = GetComponent<DynamicCamera>();
+        //cameraLocation = camera.cameraPosition;
+        transform.LookAt(cam.transform.position);
+        
+    }
 
     void OnTriggerEnter(Collider other)
     {
