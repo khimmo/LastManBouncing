@@ -151,6 +151,7 @@ MonoBehaviour:
   moveForce: 0.5
   moveForceDefault: 0.5
   jumpForce: 8
+  jumpForceDefault: 8
   maxSpeed: 9
   originalMaxSpeed: 9
   rayCastLength: 0
@@ -159,6 +160,12 @@ MonoBehaviour:
   rb: {fileID: 1702860117538248130}
   playerCamera: {fileID: 0}
   grounded: 0
+  originalJumpForce: 0
+  isShockBoosted: 0
+  controlsInverted: 0
+  shockwaveForce: 50
+  shockwaveRadius: 7.5
+  hasShockwave: 0
 --- !u!114 &9061925455920682319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,3 +181,4 @@ MonoBehaviour:
   wallbounceForce: 5
   bounceForceMultiplier: 1
   rb: {fileID: 1702860117538248130}
+  isConfuser: 0

@@ -29,9 +29,15 @@ public class NewBallMovementDP : MonoBehaviour
     private string horizontalInput;
     private string verticalInput;
     private string jumpInput;
+    private string shockwaveInput;
     private bool isBounceBoosted = false;
+    public bool isShockBoosted = false;
     public bool controlsInverted;
-    private float currentTransitionTime = 0f;
+    private float currentBounceTransitionTime = 0f;
+    private float currentShockTransitionTime = 0f;
+    public float shockwaveForce;
+    public float shockwaveRadius;
+    public bool hasShockwave = false;
     //private float totalTransitionDuration = 2f;
 
     private void Start()
@@ -46,12 +52,14 @@ public class NewBallMovementDP : MonoBehaviour
             horizontalInput = "Horizontal";
             verticalInput = "Vertical";
             jumpInput = "Jump_P1";
+            shockwaveInput = "Shockwave_P1";
         }
         else if (playerNumber == PlayerNumber.Player2)
         {
             horizontalInput = "Horizontal_P2";
             verticalInput = "Vertical_P2";
             jumpInput = "Jump_P2";
+            shockwaveInput = "Shockwave_P2";
         }
     }
 
@@ -128,14 +136,20 @@ public class NewBallMovementDP : MonoBehaviour
             if (Time.time >= bounceBoostEndTime)
             {
                 isBounceBoosted = false;
-                currentTransitionTime = 0f;
+                currentBounceTransitionTime = 0f;
             }
         }
 
-        if (currentTransitionTime < bounceBoostDuration)
+        if (currentBounceTransitionTime < bounceBoostDuration)
         {
-            currentTransitionTime += Time.deltaTime;
-            maxSpeed = Mathf.Lerp(15f, originalMaxSpeed, currentTransitionTime / bounceBoostDuration);
+            currentBounceTransitionTime += Time.deltaTime;
+            maxSpeed = Mathf.Lerp(15f, originalMaxSpeed, currentBounceTransitionTime / bounceBoostDuration);
+        }
+
+        if (currentShockTransitionTime < shockBoostDuration)
+        {
+            currentShockTransitionTime += Time.deltaTime;
+            maxSpeed = Mathf.Lerp(20f, originalMaxSpeed, currentShockTransitionTime / shockBoostDuration);
         }
 
         rayCastLength = transform.localScale.x * 0.5f + 0.01f;
@@ -160,6 +174,11 @@ public class NewBallMovementDP : MonoBehaviour
             grounded = false;
         }
 
+        if (Input.GetButtonDown(shockwaveInput) && hasShockwave == true)
+        {
+            TriggerShockwave();
+        }
+
 
     }
 
@@ -168,6 +187,14 @@ public class NewBallMovementDP : MonoBehaviour
         if (!isBounceBoosted)
         {
             StartCoroutine(BounceBoostCoroutine());
+        }
+    }
+
+    public void StartShockBoostCoroutine()
+    {
+        if (!isShockBoosted)
+        {
+            StartCoroutine(ShockBoostCoroutine());
         }
     }
 
@@ -184,7 +211,23 @@ public class NewBallMovementDP : MonoBehaviour
         yield return new WaitForSeconds(bounceBoostDuration);
 
         isBounceBoosted = false;
-        currentTransitionTime = 0f;
+        currentBounceTransitionTime = 0f;
+    }
+
+    private float shockBoostDuration = 0.75f;
+    private float shockBoostEndTime;
+
+    private IEnumerator ShockBoostCoroutine()
+    {
+        isShockBoosted = true;
+        maxSpeed = 20f; // Increase maxSpeed
+        shockBoostEndTime = Time.time + shockBoostDuration;
+
+        // Wait for the speed boost duration to elapse
+        yield return new WaitForSeconds(shockBoostDuration);
+
+        isShockBoosted = false;
+        currentShockTransitionTime = 0f;
     }
 
     public void StartSpeedBoostCoroutine(float speedMultiplier, float jumpForceBoost, float moveForceBoost, float speedBoostDuration)
@@ -229,4 +272,47 @@ public class NewBallMovementDP : MonoBehaviour
         // Revert the controls after the duration
         RevertControls();
     }
+
+    void TriggerShockwave()
+    {
+        // Find all nearby players within a radius
+        Collider[] colliders = Physics.OverlapSphere(transform.position, shockwaveRadius);
+        hasShockwave = false;
+
+        foreach (var collider in colliders)
+        {
+            if (collider.CompareTag("Player"))
+            {
+                // Apply a force to each player
+                Rigidbody playerRb = collider.GetComponent<Rigidbody>();
+                NewBallMovementDP playerMovement = collider.GetComponent<NewBallMovementDP>();
+                if (playerRb != null)
+                {
+                    ApplyShockwaveForce(playerRb);
+                    //playerMovement.IsShockBoosted();
+                    playerMovement.StartShockBoostCoroutine();
+                    
+                }
+            }
+        }
+    }
+
+    void ApplyShockwaveForce(Rigidbody rb)
+    {
+        
+        // Calculate the direction from the shockwave center to the player
+        Vector3 direction = rb.position - transform.position;
+
+        // Apply a force in the calculated direction
+        rb.AddForce(direction.normalized * shockwaveForce, ForceMode.Impulse);
+
+
+    }
+
+    public void HasShockwave()
+    {
+        hasShockwave = true;
+    }
+
+    
 }
