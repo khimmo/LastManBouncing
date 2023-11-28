@@ -84,6 +84,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7d1e5cf3d77f935469512ec9166f4e48, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5936754516421512687}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7d1e5cf3d77f935469512ec9166f4e48, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -6410308533225202427}
   m_SourcePrefab: {fileID: 100100000, guid: 7d1e5cf3d77f935469512ec9166f4e48, type: 3}
 --- !u!1 &2204304118273246011 stripped
 GameObject:
@@ -144,7 +147,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48c2db08fb13e164a8afe1eabfb78b2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 6536932984705762462, guid: dcc8a5c1ade8cfa4dbcffe05e6095b81, type: 3}
   cameraLocation: {x: 0, y: 0, z: 0}
 --- !u!54 &5936754516421512687
 Rigidbody:
@@ -173,3 +175,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 10
   m_CollisionDetection: 0
+--- !u!114 &-6410308533225202427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2204304118273246011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6907d1ad4efa5f1458ea81be235a5b21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bobbingHeight: 0.25
+  bobbingSpeed: 3
