@@ -202,5 +202,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 60
-  bobbingHeight: 0.25
+  bobbingHeight: 0.15
   bobbingSpeed: 3
+  isGrounded: 0

@@ -38,6 +38,7 @@ public class NewBallMovementDP : MonoBehaviour
     public float shockwaveForce;
     public float shockwaveRadius;
     public bool hasShockwave = false;
+    public GameObject shockwaveExplosionPrefab;
     //private float totalTransitionDuration = 2f;
 
     private void Start()
@@ -305,6 +306,14 @@ public class NewBallMovementDP : MonoBehaviour
 
         // Apply a force in the calculated direction
         rb.AddForce(direction.normalized * shockwaveForce, ForceMode.Impulse);
+
+        InstantiateShockwaveExplosion(transform.position);
+    }
+
+    void InstantiateShockwaveExplosion(Vector3 position)
+    { 
+        
+        GameObject particles = Instantiate(shockwaveExplosionPrefab, position, Quaternion.identity);
 
 
     }

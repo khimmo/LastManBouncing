@@ -7,7 +7,8 @@ public class PowerupBob : MonoBehaviour
     public float rotationSpeed = 60f;
     public float bobbingHeight = 0.25f;
     public float bobbingSpeed = 3f;
-    private bool isGrounded;
+    public bool landed;
+    private Transform groundTransform;
     
     
 
@@ -24,20 +25,32 @@ public class PowerupBob : MonoBehaviour
 
     void Update()
     {
+
         
+
+
+
+
+
+
+            if (landed)
+            {
+                // Rotation
+                transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
+
+                // Bobbing
+                float bobbingOffset = Mathf.Sin(bobbingSpeed * Time.time) * bobbingHeight;
+                transform.position = originalPosition + new Vector3(0f, bobbingOffset, 0f);
+            }
+
             
-
+        
+        
         
 
-        if (isGrounded)
-        {
-            // Rotation
-            transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
 
-            // Bobbing
-            float bobbingOffset = Mathf.Sin(bobbingSpeed * Time.time) * bobbingHeight;
-            transform.position = originalPosition + new Vector3(0f, bobbingOffset, 0f);
-        }
+        
+        
 
         
          
@@ -49,9 +62,10 @@ public class PowerupBob : MonoBehaviour
         // Check if the powerup collides with the ground
         if (collision.gameObject.CompareTag("GROUND"))
         {
-            isGrounded = true;
+            landed = true;
             originalPosition = transform.position + new Vector3(0, 2 * bobbingHeight, 0);
-        }
+
+        }    
 
      
     }

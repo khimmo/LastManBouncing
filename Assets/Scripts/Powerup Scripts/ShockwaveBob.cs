@@ -14,10 +14,12 @@ public class ShockwaveBob : MonoBehaviour
     //private new Vector3 startingHeight 
 
     private Vector3 originalPosition;
+    private Vector3 startingPosition;
 
     private void Start()
     {
-
+        startingPosition = new Vector3(transform.position.x, 25, transform.position.z);
+        transform.position = startingPosition;
     }
 
     void Update()
