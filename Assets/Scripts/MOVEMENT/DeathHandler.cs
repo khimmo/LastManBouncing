@@ -21,7 +21,7 @@ public class DeathHandler : MonoBehaviour
         {
             deathOccurred = true;
             HandlePlayerFellOff(other.gameObject);
-            Invoke("RestartScene", 2f); // Delay before restarting the scene
+            Invoke("RestartScene", 1f); // Delay before restarting the scene
         }
     }
 
