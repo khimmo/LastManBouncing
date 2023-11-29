@@ -221,7 +221,7 @@ public class NewBallMovementDP : MonoBehaviour
     private IEnumerator ShockBoostCoroutine()
     {
         isShockBoosted = true;
-        maxSpeed = 20f; // Increase maxSpeed
+        maxSpeed = 30f; // Increase maxSpeed
         shockBoostEndTime = Time.time + shockBoostDuration;
 
         // Wait for the speed boost duration to elapse

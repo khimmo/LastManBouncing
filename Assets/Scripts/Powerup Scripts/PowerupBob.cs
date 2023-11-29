@@ -9,6 +9,7 @@ public class PowerupBob : MonoBehaviour
     public float bobbingSpeed = 3f;
     public bool landed;
     private Transform groundTransform;
+    public bool isGrounded;
     
     
 
@@ -21,16 +22,29 @@ public class PowerupBob : MonoBehaviour
     {
         startingPosition = new Vector3(transform.position.x, 25, transform.position.z);
         transform.position = startingPosition;
+        landed = false;
     }
-
+    //a.alyosif@
     void Update()
     {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 2f))
+        {
+            if (hit.collider.gameObject == null) 
+            {
+              //  print("null");
+                landed = false;
+                isGrounded = false;
+            }
 
-        
+            if (hit.collider.gameObject != null)
+            {
+                //print("not null");
+                isGrounded = true;
 
-
-
-
+                //landed = false;
+            }
+        }
 
 
             if (landed)
@@ -60,7 +74,7 @@ public class PowerupBob : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         // Check if the powerup collides with the ground
-        if (collision.gameObject.CompareTag("GROUND"))
+        if (collision.gameObject.CompareTag("GROUND") && landed == false)
         {
             landed = true;
             originalPosition = transform.position + new Vector3(0, 2 * bobbingHeight, 0);
