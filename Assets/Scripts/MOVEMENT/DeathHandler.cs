@@ -4,53 +4,52 @@ using TMPro;
 
 public class DeathHandler : MonoBehaviour
 {
-    public TextMeshProUGUI messageText; 
+    public TextMeshProUGUI messageText;
 
     private static int sphereScore = 0;
     private static int sphere2Score = 0;
+    private bool deathOccurred = false;
+
+    void Start()
+    {
+        UpdateScoreboard();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && !deathOccurred)
         {
+            deathOccurred = true;
             HandlePlayerFellOff(other.gameObject);
+            Invoke("RestartScene", 2f); // Delay before restarting the scene
         }
     }
 
     private void HandlePlayerFellOff(GameObject player)
     {
-        // Update score based on which player fell off
         if (player.name == "Sphere")
         {
             sphere2Score++;
-            UpdateMessage("Player 2 scores! Total score: " + sphereScore + " - " + sphere2Score);
         }
         else if (player.name == "Sphere2")
         {
             sphereScore++;
-            UpdateMessage("Player 1 scores! Total score: " + sphereScore + " - " + sphere2Score);
         }
 
-        // Restart the scene after a delay
-        Invoke("RestartScene", 4f);
+        UpdateScoreboard();
     }
 
-    private void UpdateMessage(string message)
+    private void UpdateScoreboard()
     {
         if (messageText != null)
         {
-            messageText.text = message;
-            Debug.Log("Updating message: " + message); 
-            
-        }
-        else
-        {
-            Debug.LogError("messageText reference is null.");
+            messageText.text = "Sphere: " + sphereScore + " - Sphere2: " + sphere2Score;
         }
     }
 
     private void RestartScene()
     {
+        deathOccurred = false; // Reset the flag for the next round
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
