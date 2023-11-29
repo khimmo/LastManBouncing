@@ -8,7 +8,7 @@ public class PowerupBob : MonoBehaviour
     public float bobbingHeight = 0.25f;
     public float bobbingSpeed = 3f;
     public bool landed;
-    private Transform groundTransform;
+    private Transform childTransform;
     public bool isGrounded;
     
     
@@ -23,52 +23,27 @@ public class PowerupBob : MonoBehaviour
         startingPosition = new Vector3(transform.position.x, 25, transform.position.z);
         transform.position = startingPosition;
         landed = false;
+
+        if (transform.childCount > 0)
+        {
+            childTransform = transform.GetChild(0);
+            isGrounded = true;
+        }
     }
     //a.alyosif@
     void Update()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, 2f))
-        {
-            if (hit.collider.gameObject == null) 
-            {
-              //  print("null");
-                landed = false;
-                isGrounded = false;
-            }
-
-            if (hit.collider.gameObject != null)
-            {
-                //print("not null");
-                isGrounded = true;
-
-                //landed = false;
-            }
-        }
-
-
-            if (landed)
+     
+            if (landed && childTransform != null)
             {
                 // Rotation
-                transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
+                childTransform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
 
                 // Bobbing
                 float bobbingOffset = Mathf.Sin(bobbingSpeed * Time.time) * bobbingHeight;
-                transform.position = originalPosition + new Vector3(0f, bobbingOffset, 0f);
+                childTransform.localPosition = new Vector3(0f, bobbingOffset + 2*bobbingHeight, 0f);
             }
 
-            
-        
-        
-        
-
-
-        
-        
-
-        
-         
-        
     }
 
     void OnCollisionEnter(Collision collision)
@@ -77,7 +52,7 @@ public class PowerupBob : MonoBehaviour
         if (collision.gameObject.CompareTag("GROUND") && landed == false)
         {
             landed = true;
-            originalPosition = transform.position + new Vector3(0, 2 * bobbingHeight, 0);
+            //originalPosition = transform.position + new Vector3(0, 2 * bobbingHeight, 0);
 
         }    
 
