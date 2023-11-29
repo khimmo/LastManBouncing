@@ -32,6 +32,7 @@ public class SizePowerup : MonoBehaviour
         if (NewBallMovementDP != null)
         {
             NewBallMovementDP.jumpForce *= jumpForceIncreasePercentage;
+            NewBallMovementDP.jumpForceDefault *= jumpForceIncreasePercentage;
             NewBallMovementDP.moveForceDefault *= jumpForceIncreasePercentage;
         }
 
@@ -41,4 +42,6 @@ public class SizePowerup : MonoBehaviour
             BallCollision.bounceForceMultiplier *= bounceIncreasePercentage;
         }
     }
+
+
 }

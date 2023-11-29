@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 64755190323124722}
   - component: {fileID: 205964856472307008}
   - component: {fileID: -5381685991606936148}
+  - component: {fileID: 8984767586746442165}
   m_Layer: 0
   m_Name: forestpack_stone_large_1
   m_TagString: Untagged
@@ -103,7 +104,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -126,7 +127,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 23061063287705904}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!54 &-5381685991606936148
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -154,3 +155,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 0
+--- !u!136 &8984767586746442165
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198013417640408}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.50465643
+  m_Height: 0.7304958
+  m_Direction: 1
+  m_Center: {x: -0.023014367, y: -0.04013847, z: -0.05002983}

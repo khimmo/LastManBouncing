@@ -12,6 +12,8 @@ TagManager:
   - Layer 5
   - Layer 6
   - Layer 7
+  - GROUND
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -19,7 +21,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - ground
   - 
   - 
   - 

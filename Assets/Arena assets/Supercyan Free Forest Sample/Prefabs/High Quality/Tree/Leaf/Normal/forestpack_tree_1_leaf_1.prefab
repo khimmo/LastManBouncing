@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 205548538367759612}
   - component: {fileID: 136328532474461060}
   - component: {fileID: -3162057753491445733}
+  - component: {fileID: -8260326139764701475}
+  - component: {fileID: 6453677702069989677}
   m_Layer: 0
   m_Name: forestpack_tree_1_leaf_1
   m_TagString: Untagged
@@ -127,7 +129,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 23594291711623232}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!136 &136328532474461060
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -178,3 +180,43 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 0
+--- !u!136 &-8260326139764701475
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490343738201892}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.6986556
+  m_Height: 2.3331134
+  m_Direction: 1
+  m_Center: {x: 0.05, y: 1.0146283, z: -0.031410426}
+--- !u!114 &6453677702069989677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490343738201892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69c90c67bcf1ce142a8ed276c13ada8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnHeight: 4
+  sizePowerupPrefab: {fileID: 7489271124529799849, guid: 139b9de65516cd14bbcfa203ea01b2e9, type: 3}
+  speedPowerupPrefab: {fileID: 4549167233962222605, guid: 1e3a0f243d2847d48a6bd3a88b09012f, type: 3}
+  confusionPowerupPrefab: {fileID: 7166021258659367062, guid: f95a1700b0140654c823b51da43ee397, type: 3}
+  shockwavePowerupPrefab: {fileID: 2204304118273246011, guid: 801ffab6dd449a248a52d66aaf75e717, type: 3}
