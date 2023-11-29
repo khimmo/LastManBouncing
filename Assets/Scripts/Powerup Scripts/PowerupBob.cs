@@ -21,6 +21,7 @@ public class PowerupBob : MonoBehaviour
     {
         startingPosition = new Vector3(transform.position.x, 25, transform.position.z);
         transform.position = startingPosition;
+        landed = false;
     }
 
     void Update()
@@ -60,7 +61,7 @@ public class PowerupBob : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         // Check if the powerup collides with the ground
-        if (collision.gameObject.CompareTag("GROUND"))
+        if (collision.gameObject.CompareTag("GROUND") && landed == false)
         {
             landed = true;
             originalPosition = transform.position + new Vector3(0, 2 * bobbingHeight, 0);

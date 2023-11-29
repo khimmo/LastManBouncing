@@ -7,7 +7,7 @@ public class ShockwaveBob : MonoBehaviour
     //public float rotationSpeed = 60f;
     public float bobbingHeight = 0.25f;
     public float bobbingSpeed = 3f;
-    private bool isGrounded;
+    private bool landed;
 
 
 
@@ -20,6 +20,7 @@ public class ShockwaveBob : MonoBehaviour
     {
         startingPosition = new Vector3(transform.position.x, 25, transform.position.z);
         transform.position = startingPosition;
+        landed = false;
     }
 
     void Update()
@@ -29,7 +30,7 @@ public class ShockwaveBob : MonoBehaviour
 
 
 
-        if (isGrounded)
+        if (landed)
         {
             // Rotation
             //transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
@@ -47,9 +48,9 @@ public class ShockwaveBob : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         // Check if the powerup collides with the ground
-        if (collision.gameObject.CompareTag("GROUND"))
+        if (collision.gameObject.CompareTag("GROUND") && landed == false)
         {
-            isGrounded = true;
+            landed = true;
             originalPosition = transform.position + new Vector3(0, 2 * bobbingHeight, 0);
         }
 
