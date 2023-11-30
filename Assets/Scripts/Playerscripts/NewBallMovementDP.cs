@@ -7,7 +7,9 @@ public class NewBallMovementDP : MonoBehaviour
     public enum PlayerNumber
     {
         Player1,
-        Player2
+        Player2, 
+        Player3,
+        Player4
     }
 
     public PlayerNumber playerNumber;  
@@ -48,21 +50,35 @@ public class NewBallMovementDP : MonoBehaviour
 
         rb = GetComponent<Rigidbody>();
 
-        if (playerNumber == PlayerNumber.Player1)
+        switch (playerNumber)
         {
-            horizontalInput = "Horizontal";
-            verticalInput = "Vertical";
-            jumpInput = "Jump_P1";
-            shockwaveInput = "Shockwave_P1";
-        }
-        else if (playerNumber == PlayerNumber.Player2)
-        {
-            horizontalInput = "Horizontal_P2";
-            verticalInput = "Vertical_P2";
-            jumpInput = "Jump_P2";
-            shockwaveInput = "Shockwave_P2";
+            case PlayerNumber.Player1:
+                horizontalInput = "Horizontal_P1";
+                verticalInput = "Vertical_P1";
+                jumpInput = "Jump_P1";
+                shockwaveInput = "Shockwave_P1";
+                break;
+            case PlayerNumber.Player2:
+                horizontalInput = "Horizontal_P2";
+                verticalInput = "Vertical_P2";
+                jumpInput = "Jump_P2";
+                shockwaveInput = "Shockwave_P2";
+                break;
+            case PlayerNumber.Player3:
+                horizontalInput = "Horizontal_P3";
+                verticalInput = "Vertical_P3";
+                jumpInput = "Jump_P3";
+                shockwaveInput = "Shockwave_P3";
+                break;
+            case PlayerNumber.Player4:
+                horizontalInput = "Horizontal_P4";
+                verticalInput = "Vertical_P4";
+                jumpInput = "Jump_P4";
+                shockwaveInput = "Shockwave_P4";
+                break;
         }
     }
+
 
     public void InvertControls()
     {

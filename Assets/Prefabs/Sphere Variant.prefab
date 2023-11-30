@@ -1,0 +1,144 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &892460987658266390
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2749103525545232259, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -45.870613
+      objectReference: {fileID: 0}
+    - target: {fileID: 2749103525545232259, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 104.75557
+      objectReference: {fileID: 0}
+    - target: {fileID: 2749103525545232259, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -116.84263
+      objectReference: {fileID: 0}
+    - target: {fileID: 2749103525545232259, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2749103525545232259, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2749103525545232259, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2749103525545232259, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2749103525545232259, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2749103525545232259, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2749103525545232259, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3606453492178758710, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3606453492178758710, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
+      propertyPath: hasShockwave
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3606453492178758710, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
+      propertyPath: shockwaveForce
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 3606453492178758710, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
+      propertyPath: shockwaveRadius
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3606453492178758710, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
+      propertyPath: jumpForceDefault
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3606453492178758710, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
+      propertyPath: shockwaveExplosionPrefab
+      value: 
+      objectReference: {fileID: 3578746465825505116, guid: b2cfe817f4c75aa47870bf57d5307f8b, type: 3}
+    - target: {fileID: 8533106654184019188, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
+      propertyPath: m_Name
+      value: Sphere Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8533106654184019188, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8533106654184019188, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2974421131311887963}
+    - targetCorrespondingSourceObject: {fileID: 8533106654184019188, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -8466682519309412142}
+  m_SourcePrefab: {fileID: 100100000, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
+--- !u!1 &8793568271189865442 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8533106654184019188, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
+  m_PrefabInstance: {fileID: 892460987658266390}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2974421131311887963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8793568271189865442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ed2cd11593245a499f312641dd00221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerNumber: 0
+  etherealDuration: 1
+  isEtherealActive: 0
+--- !u!114 &-8466682519309412142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8793568271189865442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64cdc635075f13a41b3979f8422e7c86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerNumber: 0
+  moveForce: 0.5
+  moveForceDefault: 0.5
+  jumpForce: 8
+  jumpForceDefault: 8
+  maxSpeed: 9
+  originalMaxSpeed: 9
+  rayCastLength: 0
+  maxJumps: 1
+  jumpsRemaining: 0
+  rb: {fileID: 0}
+  grounded: 0
+  originalJumpForce: 0
+  isShockBoosted: 0
+  controlsInverted: 0
+  shockwaveForce: 65
+  shockwaveRadius: 7.5
+  hasShockwave: 0
+  shockwaveExplosionPrefab: {fileID: 3578746465825505116, guid: b2cfe817f4c75aa47870bf57d5307f8b, type: 3}
