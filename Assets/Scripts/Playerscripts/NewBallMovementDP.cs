@@ -41,6 +41,10 @@ public class NewBallMovementDP : MonoBehaviour
     public float shockwaveRadius;
     public bool hasShockwave = false;
     public GameObject shockwaveExplosionPrefab;
+
+    public Material invertedControlsMaterial; // Assign the material with inverted controls texture in the Inspector
+    private Material originalMaterial;
+    private Renderer ballRenderer;
     //private float totalTransitionDuration = 2f;
 
     private void Start()
@@ -49,6 +53,9 @@ public class NewBallMovementDP : MonoBehaviour
         jumpForce = jumpForceDefault;
 
         rb = GetComponent<Rigidbody>();
+
+        ballRenderer = GetComponent<Renderer>();
+        originalMaterial = ballRenderer.material;
 
         switch (playerNumber)
         {
@@ -276,6 +283,7 @@ public class NewBallMovementDP : MonoBehaviour
     public void StartInvertControlsCoroutine()
     {
         StartCoroutine(InvertControlsCoroutine());
+        ballRenderer.material = invertedControlsMaterial;
     }
 
     private IEnumerator InvertControlsCoroutine()
@@ -288,6 +296,7 @@ public class NewBallMovementDP : MonoBehaviour
 
         // Revert the controls after the duration
         RevertControls();
+        ballRenderer.material = originalMaterial;
     }
 
     void TriggerShockwave()

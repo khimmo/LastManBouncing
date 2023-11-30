@@ -10,7 +10,7 @@ public class PlayerPowerupManager : MonoBehaviour
     }
 
     public PlayerNumber playerNumber;
-    public float etherealDuration = 1f;
+    public float etherealDuration = 2f;
     public bool isEtherealActive;
 
     private bool hasEtherealPowerup = false;

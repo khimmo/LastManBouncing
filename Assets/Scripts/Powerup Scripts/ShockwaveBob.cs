@@ -8,7 +8,8 @@ public class ShockwaveBob : MonoBehaviour
     public float bobbingHeight = 0.25f;
     public float bobbingSpeed = 3f;
     private bool landed;
-
+    private Transform childTransform;
+    public bool isGrounded;
 
 
     //private new Vector3 startingHeight 
@@ -21,23 +22,25 @@ public class ShockwaveBob : MonoBehaviour
         startingPosition = new Vector3(transform.position.x, 25, transform.position.z);
         transform.position = startingPosition;
         landed = false;
+
+        if (transform.childCount > 0)
+        {
+            childTransform = transform.GetChild(0);
+            isGrounded = true;
+        }
     }
 
     void Update()
     {
 
-
-
-
-
-        if (landed)
+        if (landed && childTransform != null)
         {
             // Rotation
             //transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
 
             // Bobbing
             float bobbingOffset = Mathf.Sin(bobbingSpeed * Time.time) * bobbingHeight;
-            transform.position = originalPosition + new Vector3(0f, bobbingOffset, 0f);
+            childTransform.localPosition = new Vector3(0f, bobbingOffset + 2 * bobbingHeight, 0f);
         }
 
 
@@ -51,7 +54,7 @@ public class ShockwaveBob : MonoBehaviour
         if (collision.gameObject.CompareTag("GROUND") && landed == false)
         {
             landed = true;
-            originalPosition = transform.position + new Vector3(0, 2 * bobbingHeight, 0);
+            //originalPosition = transform.position + new Vector3(0, 2 * bobbingHeight, 0);
         }
 
 
