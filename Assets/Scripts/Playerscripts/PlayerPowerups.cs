@@ -41,6 +41,7 @@ public class PlayerPowerups : MonoBehaviour
     {
         originalLayer = gameObject.layer; // Store the original layer
         movementScript = GetComponent<MovementDPMP>(); // Reference to the movement script
+    
     }
 
     void Update()
