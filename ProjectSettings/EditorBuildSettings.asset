@@ -5,8 +5,17 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/zone 1.unity
     guid: efb337bf3489ff0438dbeace3c982935
+  - enabled: 1
+    path: Assets/Scenes/Start.unity
+    guid: 2219528b4fdd45e4b8a1f0626c81462e
+  - enabled: 0
+    path: Assets/Scenes/zone 2.1 Khalid.unity
+    guid: 65252bd7afbe4c641b2dfcef2c76df88
+  - enabled: 1
+    path: Assets/Scenes/zone 2.1 Khalid 1.unity
+    guid: c9bb374e6d14a3d49b4de002e11d0b66
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
