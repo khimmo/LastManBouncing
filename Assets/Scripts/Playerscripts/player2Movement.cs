@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBallMovementDP : MonoBehaviour
+public class player2Movement : MonoBehaviour
+
 {
     public enum PlayerNumber
     {
         Player1,
-        Player2, 
+        Player2,
         Player3,
         Player4
     }
 
-    public PlayerNumber playerNumber;  
+    public PlayerNumber playerNumber;
 
     public float moveForce;
     public float moveForceDefault;
@@ -45,8 +46,6 @@ public class NewBallMovementDP : MonoBehaviour
     public Material invertedControlsMaterial; // Assign the material with inverted controls texture in the Inspector
     private Material originalMaterial;
     private Renderer ballRenderer;
-
-    Audioplayer audioplayer;
     //private float totalTransitionDuration = 2f;
 
     private void Start()
@@ -58,7 +57,6 @@ public class NewBallMovementDP : MonoBehaviour
 
         ballRenderer = GetComponent<Renderer>();
         originalMaterial = ballRenderer.material;
-        audioplayer = FindObjectOfType<Audioplayer>();
 
         switch (playerNumber)
         {
@@ -104,7 +102,7 @@ public class NewBallMovementDP : MonoBehaviour
     {
 
 
-        
+
 
         float moveVertical = Input.GetAxis(horizontalInput);
         float moveHorizontal = Input.GetAxis(verticalInput);
@@ -144,7 +142,7 @@ public class NewBallMovementDP : MonoBehaviour
             moveForce = moveForceDefault;
         }
 
-        
+
 
     }
 
@@ -155,7 +153,7 @@ public class NewBallMovementDP : MonoBehaviour
             jumpForce = jumpForceDefault;
         }
 
-        
+
 
         if (isBounceBoosted)
         {
@@ -182,14 +180,13 @@ public class NewBallMovementDP : MonoBehaviour
         rayCastLength = transform.localScale.x * 0.5f + 0.01f;
         //Ground Check
         isGrounded = Physics.Raycast(transform.position, Vector3.down, rayCastLength);
-        
-        
+
+
 
         if (Input.GetButtonDown(jumpInput) && jumpsRemaining > 0)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             jumpsRemaining--;
-            audioplayer.Jump_audio();
         }
 
         if (isGrounded)
@@ -321,7 +318,7 @@ public class NewBallMovementDP : MonoBehaviour
                     ApplyShockwaveForce(playerRb);
                     //playerMovement.IsShockBoosted();
                     playerMovement.StartShockBoostCoroutine();
-                    
+
                 }
             }
         }
@@ -329,7 +326,7 @@ public class NewBallMovementDP : MonoBehaviour
 
     void ApplyShockwaveForce(Rigidbody rb)
     {
-        
+
         // Calculate the direction from the shockwave center to the player
         Vector3 direction = rb.position - transform.position;
 
@@ -340,8 +337,8 @@ public class NewBallMovementDP : MonoBehaviour
     }
 
     void InstantiateShockwaveExplosion(Vector3 position)
-    { 
-        
+    {
+
         GameObject particles = Instantiate(shockwaveExplosionPrefab, position, Quaternion.identity);
 
 
@@ -352,5 +349,7 @@ public class NewBallMovementDP : MonoBehaviour
         hasShockwave = true;
     }
 
-    
+
 }
+
+
