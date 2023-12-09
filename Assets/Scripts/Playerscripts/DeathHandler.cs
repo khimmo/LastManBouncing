@@ -9,10 +9,14 @@ public class DeathHandler : MonoBehaviour
     private static int sphereScore = 0;
     private static int sphere2Score = 0;
     private bool deathOccurred = false;
+    public TextMeshProUGUI player1ScoreText;
+    public TextMeshProUGUI player2ScoreText;
 
     void Start()
     {
         UpdateScoreboard();
+        UpdateIndividualScoreboard(player1ScoreText, sphereScore);
+        UpdateIndividualScoreboard(player2ScoreText, sphere2Score);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -30,20 +34,32 @@ public class DeathHandler : MonoBehaviour
         if (player.name == "Sphere")
         {
             sphere2Score++;
+            UpdateIndividualScoreboard(player2ScoreText, sphere2Score);
+            
         }
         else if (player.name == "Sphere2")
         {
             sphereScore++;
+            UpdateIndividualScoreboard(player1ScoreText, sphereScore);
+            
         }
 
         UpdateScoreboard();
     }
+    private void UpdateIndividualScoreboard(TextMeshProUGUI scoreText, int score)
+    {
+        if (scoreText != null)
+        {
+            scoreText.text = "Score: " + score;
+        }
+    }
+
 
     private void UpdateScoreboard()
     {
         if (messageText != null)
         {
-            messageText.text = "Sphere: " + sphereScore + " - Sphere2: " + sphere2Score;
+            messageText.text = "Sphere: " + sphereScore + "- Sphere2: " + sphere2Score;
         }
     }
 

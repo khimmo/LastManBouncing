@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class NewBallMovementDP : MonoBehaviour
 {
     public enum PlayerNumber
@@ -41,7 +42,7 @@ public class NewBallMovementDP : MonoBehaviour
     public float shockwaveRadius;
     public bool hasShockwave = false;
     public GameObject shockwaveExplosionPrefab;
-
+    
     public Material invertedControlsMaterial; // Assign the material with inverted controls texture in the Inspector
     private Material originalMaterial;
     private Renderer ballRenderer;
@@ -207,7 +208,7 @@ public class NewBallMovementDP : MonoBehaviour
             TriggerShockwave();
         }
 
-
+        
     }
 
     public void StartBounceBoostCoroutine()
