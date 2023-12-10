@@ -35,6 +35,7 @@ public class NewBallMovementDP : MonoBehaviour
     private string shockwaveInput;
     private bool isBounceBoosted = false;
     public bool isShockBoosted = false;
+    public bool isSpeedBoosted = false;
     public bool controlsInverted;
     private float currentBounceTransitionTime = 0f;
     private float currentShockTransitionTime = 0f;
@@ -42,6 +43,7 @@ public class NewBallMovementDP : MonoBehaviour
     public float shockwaveRadius;
     public bool hasShockwave = false;
     public GameObject shockwaveExplosionPrefab;
+    public float burgerCount;
     
     public Material invertedControlsMaterial; // Assign the material with inverted controls texture in the Inspector
     private Material originalMaterial;
@@ -54,6 +56,7 @@ public class NewBallMovementDP : MonoBehaviour
     {
         originalMaxSpeed = maxSpeed;
         jumpForce = jumpForceDefault;
+        
 
         rb = GetComponent<Rigidbody>();
 
@@ -104,8 +107,8 @@ public class NewBallMovementDP : MonoBehaviour
     private void FixedUpdate()
     {
 
+        burgerCount = Mathf.Round(Mathf.Log(rb.mass, 1.75f));
 
-        
 
         float moveVertical = Input.GetAxis(horizontalInput);
         float moveHorizontal = Input.GetAxis(verticalInput);
@@ -155,6 +158,8 @@ public class NewBallMovementDP : MonoBehaviour
         {
             jumpForce = jumpForceDefault;
         }
+
+        
 
         
 
@@ -227,13 +232,13 @@ public class NewBallMovementDP : MonoBehaviour
         }
     }
 
-    private float bounceBoostDuration = 0.5f;
+    private float bounceBoostDuration = 1f;
     private float bounceBoostEndTime;
 
     private IEnumerator BounceBoostCoroutine()
     {
         isBounceBoosted = true;
-        maxSpeed = 15f; // Increase maxSpeed
+        maxSpeed = 20f; // Increase maxSpeed
         bounceBoostEndTime = Time.time + bounceBoostDuration;
 
         // Wait for the speed boost duration to elapse
@@ -270,6 +275,8 @@ public class NewBallMovementDP : MonoBehaviour
         float originalMaxSpeed = maxSpeed;
         float originalJumpForce = jumpForce;
         float originalMoveForce = moveForce;
+        isSpeedBoosted = true;
+
 
         // Apply the speed boost
         maxSpeed *= speedMultiplier;
@@ -283,6 +290,7 @@ public class NewBallMovementDP : MonoBehaviour
         maxSpeed = originalMaxSpeed;
         jumpForce = originalJumpForce;
         moveForce = originalMoveForce;
+        isSpeedBoosted = false;
     }
 
     public void StartInvertControlsCoroutine()

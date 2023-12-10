@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class DynamicCameraMP : MonoBehaviour
 {
-    private List<Transform> players = new List<Transform>();
+    public List<Transform> players = new List<Transform>();
     public float minDistance = 10f; // Minimum distance for the camera zoom
     public float maxDistance = 50f; // Maximum distance for the camera zoom
     public float smoothTime = 0.5f; // Smoothing time for camera movement
