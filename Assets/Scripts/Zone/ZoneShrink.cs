@@ -31,7 +31,7 @@ public class ZoneShrink : MonoBehaviour
     [SerializeField] List<GameObject> layer5Assets = new List<GameObject>();
 
     // main timer variable
-    [SerializeField] private float timer = 25f;
+    [SerializeField] public float timer = 25f;
 
     // timer reset variable
     public float timerDefault = 25f;
@@ -40,7 +40,7 @@ public class ZoneShrink : MonoBehaviour
     public float zoneDestroyTimer = 3f;
 
     
-    [SerializeField] private int zoneIndex = 0;
+    [SerializeField] public int zoneIndex = 0;
     [SerializeField] private TextMeshProUGUI timerText;
  
     void Timer()
