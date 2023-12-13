@@ -73,7 +73,7 @@ public class ZoneShrink : MonoBehaviour
             timer = timerDefault;
             zoneIndex++;
             
-            spawner.beginSpawning();
+            
         }
 
         if (timer <= 0 && zoneIndex == 1)

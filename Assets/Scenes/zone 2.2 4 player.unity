@@ -2819,6 +2819,7 @@ MonoBehaviour:
   playerNumber: 1
   etherealDuration: 2
   isEtherealActive: 0
+  meshRenderer: {fileID: 0}
 --- !u!114 &561379956 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3606453492178758710, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
@@ -8044,6 +8045,7 @@ MonoBehaviour:
   playerNumber: 1
   etherealDuration: 2
   isEtherealActive: 0
+  meshRenderer: {fileID: 0}
 --- !u!1 &1531142829
 GameObject:
   m_ObjectHideFlags: 0
@@ -8355,6 +8357,7 @@ MonoBehaviour:
   playerNumber: 0
   etherealDuration: 2
   isEtherealActive: 0
+  meshRenderer: {fileID: 0}
 --- !u!1 &1644572452
 GameObject:
   m_ObjectHideFlags: 0
@@ -8829,6 +8832,7 @@ MonoBehaviour:
   playerNumber: 1
   etherealDuration: 2
   isEtherealActive: 0
+  meshRenderer: {fileID: 0}
 --- !u!1001 &1679593705
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11830,6 +11834,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2020854188}
   - component: {fileID: 2020854189}
+  - component: {fileID: 2020854190}
   m_Layer: 0
   m_Name: Zone 2
   m_TagString: Untagged
@@ -11897,6 +11902,26 @@ MonoBehaviour:
   zoneIndex: 0
   timerText: {fileID: 1125185847}
   spawner: {fileID: 0}
+--- !u!114 &2020854190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020854187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fafbae867abd664288c7ac5b0936e0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerupPrefabs: []
+  spawnRadius: 15
+  spawnInterval: 5
+  spawnHeight: 10
+  sizePowerupPrefab: {fileID: 4959071552885434579, guid: 5b28e6042ebb4cc42a7625d49c3fd877, type: 3}
+  speedPowerupPrefab: {fileID: 5086976456803500099, guid: 8b7796a5222a6744e8c49231d3fb1277, type: 3}
+  confusionPowerupPrefab: {fileID: 7166021258659367062, guid: f95a1700b0140654c823b51da43ee397, type: 3}
+  shockwavePowerupPrefab: {fileID: 2204304118273246011, guid: 801ffab6dd449a248a52d66aaf75e717, type: 3}
 --- !u!4 &2025966398 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4475176998798634, guid: 91d4800e505e7de4dae44d7a3a9cbd1d, type: 3}
