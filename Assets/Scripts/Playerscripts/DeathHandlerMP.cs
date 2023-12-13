@@ -4,16 +4,21 @@ using TMPro;
 
 public class DeathHandlerMP : MonoBehaviour
 {
-    public TextMeshProUGUI[] playerScoreTexts; // Array for each player's score
+    public GameObject[] playerObjects; // Array for player GameObjects
+    public TextMeshProUGUI[] playerScoreTexts; // Array for each player score UI
 
-    private static int[] playerScores;
+    // Static scores for each player
+    private static int scorePlayer1 = 0;
+    private static int scorePlayer2 = 0;
+    private static int scorePlayer3 = 0;
+    //private static int scorePlayer4 = 0; 
+
     private int activePlayers;
     private bool roundInProgress = true;
 
     void Start()
     {
-        playerScores = new int[playerScoreTexts.Length];
-        activePlayers = playerScoreTexts.Length; 
+        activePlayers = playerObjects.Length;
         UpdateAllScoreboards();
     }
 
@@ -21,30 +26,58 @@ public class DeathHandlerMP : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && roundInProgress)
         {
-            activePlayers--;
-            other.gameObject.SetActive(false); 
-
-            if (activePlayers == 1)
+            int playerIndex = System.Array.IndexOf(playerObjects, other.gameObject);
+            if (playerIndex != -1)
             {
-                // Award point to the last player standing
-                AwardPointToLastPlayerStanding();
-                Invoke("RestartScene", 1f); // Delay before restarting the scene
+                other.gameObject.SetActive(false);
+                activePlayers--;
+
+                if (activePlayers == 1)
+                {
+                    AwardPointToLastPlayerStanding();
+                    Invoke("RestartScene", 1f);
+                }
             }
         }
     }
 
     private void AwardPointToLastPlayerStanding()
     {
-        for (int i = 0; i < playerScoreTexts.Length; i++)
+        for (int i = 0; i < playerObjects.Length; i++)
         {
-            if (playerScoreTexts[i].gameObject.activeInHierarchy) // Check if the player is still active
+            if (playerObjects[i].activeInHierarchy)
             {
-                playerScores[i]++;
-                UpdateIndividualScoreboard(playerScoreTexts[i], playerScores[i]);
-                break; // Stop checking once the last player is found
+                IncrementPlayerScore(i);
+                UpdateIndividualScoreboard(playerScoreTexts[i], GetPlayerScore(i));
+                break;
             }
         }
-        roundInProgress = false; // End the current round
+        roundInProgress = false;
+    }
+
+    private void IncrementPlayerScore(int playerIndex)
+    {
+        switch (playerIndex)
+        {
+            case 0: scorePlayer1++; break;
+            case 1: scorePlayer2++; break;
+            case 2: scorePlayer3++; break;
+            //case 3: scorePlayer4++; break;
+                
+        }
+    }
+
+    private int GetPlayerScore(int playerIndex)
+    {
+        switch (playerIndex)
+        {
+            case 0: return scorePlayer1;
+            case 1: return scorePlayer2;
+            case 2: return scorePlayer3;
+            //case 3: return scorePlayer4;
+          
+           default: return 0;
+        }
     }
 
     private void UpdateIndividualScoreboard(TextMeshProUGUI scoreText, int score)
@@ -57,15 +90,15 @@ public class DeathHandlerMP : MonoBehaviour
 
     private void UpdateAllScoreboards()
     {
-        for (int i = 0; i < playerScores.Length; i++)
+        for (int i = 0; i < playerObjects.Length; i++)
         {
-            UpdateIndividualScoreboard(playerScoreTexts[i], playerScores[i]);
+            UpdateIndividualScoreboard(playerScoreTexts[i], GetPlayerScore(i));
         }
     }
 
     private void RestartScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        roundInProgress = true; // Reset for the new round
+        roundInProgress = true;
     }
 }
