@@ -11,11 +11,11 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1.0f;
         pauseScreen.SetActive(false);
 
-        // Get the number of players
+        /* Get the number of players
         int numberOfPlayers = PlayerPrefs.GetInt("NumberOfPlayers", 2);
 
-        // Spawn the players
-        for (int i = 0; i < numberOfPlayers; i++)
+        Spawn the players
+       /for (int i = 0; i < numberOfPlayers; i++)
         {
             if (i < spawnPoints.Length)
             {
@@ -27,8 +27,8 @@ public class GameManager : MonoBehaviour
                 {
                     playerScript.playerNumber = (MovementDPMP.PlayerNumber)i;
                 }
-            }
-        }
+            } 
+        } */
     }
 
     void Update()
@@ -62,4 +62,5 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
     }
+
 }

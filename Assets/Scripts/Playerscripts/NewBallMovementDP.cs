@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
 
@@ -28,6 +29,8 @@ public class NewBallMovementDP : MonoBehaviour
     public Rigidbody rb;
     public Transform playerCamera;
     public bool grounded;
+    public bool landCheck;
+    //public bool groundedState;
     public float originalJumpForce;
     private string horizontalInput;
     private string verticalInput;
@@ -44,7 +47,9 @@ public class NewBallMovementDP : MonoBehaviour
     public bool hasShockwave = false;
     public GameObject shockwaveExplosionPrefab;
     public float burgerCount;
-    
+    public float verticalVelocity;
+    public float vibrateIntensity;
+
     public Material invertedControlsMaterial; // Assign the material with inverted controls texture in the Inspector
     private Material originalMaterial;
     private Renderer ballRenderer;
@@ -56,6 +61,7 @@ public class NewBallMovementDP : MonoBehaviour
     {
         originalMaxSpeed = maxSpeed;
         jumpForce = jumpForceDefault;
+        landCheck = true;
         
 
         rb = GetComponent<Rigidbody>();
@@ -159,6 +165,8 @@ public class NewBallMovementDP : MonoBehaviour
             jumpForce = jumpForceDefault;
         }
 
+        verticalVelocity = Mathf.Abs(rb.velocity.y);
+
         
 
         
@@ -214,6 +222,54 @@ public class NewBallMovementDP : MonoBehaviour
         }
 
         
+
+        
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        //Linearly scales vibration intensity on landing at speeds between 15 (0%) and 30 (100%).
+
+        if (collision.gameObject.CompareTag("GROUND") && verticalVelocity > 20f && verticalVelocity < 30f && landCheck == true)
+        {
+
+            vibrateIntensity = (Mathf.Abs(verticalVelocity) - 15) / 15;
+            
+
+        }
+        //Any landing speed above 30 will not further increase vibration intensity.
+
+        else if (collision.gameObject.CompareTag("GROUND") && Mathf.Abs(verticalVelocity) > 30f && landCheck == true)
+        {
+            vibrateIntensity = 1;
+            
+        }
+
+        else
+        {
+            vibrateIntensity = 0;
+            return;
+        }
+
+        Vibrate();
+
+        //This coroutine is done so that the OnCollisionEnter function doesn't return multiple vibrate values at once. It functions as a small artificial cooldown before it can be called again by manipulating the landCheck bool.
+
+        StartCoroutine(AllowLandingCheck());
+        landCheck = false;
+
+
+    }
+
+    void Vibrate()
+    {
+        Debug.Log("Controller vibrate at " + vibrateIntensity * 100 + "%");
+    }
+
+    IEnumerator AllowLandingCheck()
+    {
+        yield return new WaitForSeconds(0.2f);
+        landCheck = true;
     }
 
     public void StartBounceBoostCoroutine()
@@ -232,7 +288,7 @@ public class NewBallMovementDP : MonoBehaviour
         }
     }
 
-    private float bounceBoostDuration = 1f;
+    private float bounceBoostDuration = 0.75f;
     private float bounceBoostEndTime;
 
     private IEnumerator BounceBoostCoroutine()
@@ -301,13 +357,13 @@ public class NewBallMovementDP : MonoBehaviour
 
     private IEnumerator InvertControlsCoroutine()
     {
-        // Invert the controls
+        
         InvertControls();
 
-        // Wait for a specified duration
+        
         yield return new WaitForSeconds(7f);
 
-        // Revert the controls after the duration
+        
         RevertControls();
         ballRenderer.material = originalMaterial;
     }
@@ -317,18 +373,19 @@ public class NewBallMovementDP : MonoBehaviour
         // Find all nearby players within a radius
         Collider[] colliders = Physics.OverlapSphere(transform.position, shockwaveRadius);
         hasShockwave = false;
+        audioplayer.Explosion();
 
         foreach (var collider in colliders)
         {
             if (collider.CompareTag("Player"))
             {
-                // Apply a force to each player
+                
                 Rigidbody playerRb = collider.GetComponent<Rigidbody>();
                 NewBallMovementDP playerMovement = collider.GetComponent<NewBallMovementDP>();
                 if (playerRb != null)
                 {
                     ApplyShockwaveForce(playerRb);
-                    //playerMovement.IsShockBoosted();
+                    
                     playerMovement.StartShockBoostCoroutine();
                     
                 }
@@ -342,7 +399,7 @@ public class NewBallMovementDP : MonoBehaviour
         // Calculate the direction from the shockwave center to the player
         Vector3 direction = rb.position - transform.position;
 
-        // Apply a force in the calculated direction
+        
         rb.AddForce(direction.normalized * shockwaveForce * rb.mass, ForceMode.Impulse);
 
         InstantiateShockwaveExplosion(transform.position);
@@ -360,6 +417,8 @@ public class NewBallMovementDP : MonoBehaviour
     {
         hasShockwave = true;
     }
+
+    
 
     
 }
