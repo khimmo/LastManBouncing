@@ -11,7 +11,7 @@ public class DeathHandlerMP : MonoBehaviour
     private static int scorePlayer1 = 0;
     private static int scorePlayer2 = 0;
     private static int scorePlayer3 = 0;
-    //private static int scorePlayer4 = 0; 
+    private static int scorePlayer4 = 0; 
 
     private int activePlayers;
     private bool roundInProgress = true;
@@ -62,7 +62,7 @@ public class DeathHandlerMP : MonoBehaviour
             case 0: scorePlayer1++; break;
             case 1: scorePlayer2++; break;
             case 2: scorePlayer3++; break;
-            //case 3: scorePlayer4++; break;
+            case 3: scorePlayer4++; break;
                 
         }
     }
@@ -74,7 +74,7 @@ public class DeathHandlerMP : MonoBehaviour
             case 0: return scorePlayer1;
             case 1: return scorePlayer2;
             case 2: return scorePlayer3;
-            //case 3: return scorePlayer4;
+            case 3: return scorePlayer4;
           
            default: return 0;
         }
