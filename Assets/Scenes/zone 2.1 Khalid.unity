@@ -194,6 +194,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: QuestionMark (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7166021258659367062, guid: f95a1700b0140654c823b51da43ee397, type: 3}
+      propertyPath: m_TagString
+      value: outline
+      objectReference: {fileID: 0}
     - target: {fileID: 7510037094404346412, guid: f95a1700b0140654c823b51da43ee397, type: 3}
       propertyPath: m_LocalPosition.x
       value: -24.117863
@@ -884,6 +888,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Burger prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 4959071552885434579, guid: 5b28e6042ebb4cc42a7625d49c3fd877, type: 3}
+      propertyPath: m_TagString
+      value: outline
+      objectReference: {fileID: 0}
     - target: {fileID: 5509146846172370631, guid: 5b28e6042ebb4cc42a7625d49c3fd877, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.2499999
@@ -1027,6 +1035,10 @@ PrefabInstance:
     - target: {fileID: 1252687729517630, guid: a8cba3361c8f7724e8899289f1efa8cc, type: 3}
       propertyPath: m_Name
       value: forestpack_roadSign_westEast_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1252687729517630, guid: a8cba3361c8f7724e8899289f1efa8cc, type: 3}
+      propertyPath: m_TagString
+      value: outline
       objectReference: {fileID: 0}
     - target: {fileID: 4009941363576130, guid: a8cba3361c8f7724e8899289f1efa8cc, type: 3}
       propertyPath: m_LocalScale.x
@@ -1351,6 +1363,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4922444305696846, guid: ac1cc01cb5dbf5d4f869c403b38f8a21, type: 3}
   m_PrefabInstance: {fileID: 1243941475}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &283702813
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 283702815}
+  - component: {fileID: 283702814}
+  m_Layer: 0
+  m_Name: Outline
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &283702814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283702813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 557a81039d2cd3d49a69a648c48d961f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &283702815
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283702813}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -20.124783, y: 21.493217, z: 14.111977}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &291580182
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1476,6 +1532,10 @@ PrefabInstance:
     - target: {fileID: 7166021258659367062, guid: f95a1700b0140654c823b51da43ee397, type: 3}
       propertyPath: m_Name
       value: QuestionMark (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7166021258659367062, guid: f95a1700b0140654c823b51da43ee397, type: 3}
+      propertyPath: m_TagString
+      value: outline
       objectReference: {fileID: 0}
     - target: {fileID: 7510037094404346412, guid: f95a1700b0140654c823b51da43ee397, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2530,6 +2590,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: w
       objectReference: {fileID: 0}
+    - target: {fileID: 1252687729517630, guid: a8cba3361c8f7724e8899289f1efa8cc, type: 3}
+      propertyPath: m_TagString
+      value: outline
+      objectReference: {fileID: 0}
     - target: {fileID: 4009941363576130, guid: a8cba3361c8f7724e8899289f1efa8cc, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.25
@@ -2945,6 +3009,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Soda Can Project 2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4549167233962222605, guid: 1e3a0f243d2847d48a6bd3a88b09012f, type: 3}
+      propertyPath: m_TagString
+      value: outline
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3127,6 +3195,10 @@ PrefabInstance:
     - target: {fileID: 4959071552885434579, guid: 5b28e6042ebb4cc42a7625d49c3fd877, type: 3}
       propertyPath: m_Name
       value: Burger prefab (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4959071552885434579, guid: 5b28e6042ebb4cc42a7625d49c3fd877, type: 3}
+      propertyPath: m_TagString
+      value: outline
       objectReference: {fileID: 0}
     - target: {fileID: 5509146846172370631, guid: 5b28e6042ebb4cc42a7625d49c3fd877, type: 3}
       propertyPath: m_LocalScale.x
@@ -3745,6 +3817,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Burger prefab (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4959071552885434579, guid: 5b28e6042ebb4cc42a7625d49c3fd877, type: 3}
+      propertyPath: m_TagString
+      value: outline
+      objectReference: {fileID: 0}
     - target: {fileID: 5509146846172370631, guid: 5b28e6042ebb4cc42a7625d49c3fd877, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.2499999
@@ -4067,6 +4143,10 @@ PrefabInstance:
     - target: {fileID: 7166021258659367062, guid: f95a1700b0140654c823b51da43ee397, type: 3}
       propertyPath: m_Name
       value: QuestionMark (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7166021258659367062, guid: f95a1700b0140654c823b51da43ee397, type: 3}
+      propertyPath: m_TagString
+      value: outline
       objectReference: {fileID: 0}
     - target: {fileID: 7510037094404346412, guid: f95a1700b0140654c823b51da43ee397, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4397,6 +4477,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: forestpack_roadSign_westEast_1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1252687729517630, guid: a8cba3361c8f7724e8899289f1efa8cc, type: 3}
+      propertyPath: m_TagString
+      value: outline
+      objectReference: {fileID: 0}
     - target: {fileID: 4009941363576130, guid: a8cba3361c8f7724e8899289f1efa8cc, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.25
@@ -4678,6 +4762,10 @@ PrefabInstance:
     - target: {fileID: 7166021258659367062, guid: f95a1700b0140654c823b51da43ee397, type: 3}
       propertyPath: m_Name
       value: QuestionMark (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7166021258659367062, guid: f95a1700b0140654c823b51da43ee397, type: 3}
+      propertyPath: m_TagString
+      value: outline
       objectReference: {fileID: 0}
     - target: {fileID: 7510037094404346412, guid: f95a1700b0140654c823b51da43ee397, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5161,6 +5249,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BOOM (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2204304118273246011, guid: 801ffab6dd449a248a52d66aaf75e717, type: 3}
+      propertyPath: m_TagString
+      value: outline
+      objectReference: {fileID: 0}
     - target: {fileID: 8786616969058243803, guid: 801ffab6dd449a248a52d66aaf75e717, type: 3}
       propertyPath: camera
       value: 
@@ -5457,6 +5549,10 @@ PrefabInstance:
     - target: {fileID: 4959071552885434579, guid: 5b28e6042ebb4cc42a7625d49c3fd877, type: 3}
       propertyPath: m_Name
       value: Burger prefab (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4959071552885434579, guid: 5b28e6042ebb4cc42a7625d49c3fd877, type: 3}
+      propertyPath: m_TagString
+      value: outline
       objectReference: {fileID: 0}
     - target: {fileID: 5509146846172370631, guid: 5b28e6042ebb4cc42a7625d49c3fd877, type: 3}
       propertyPath: m_LocalScale.x
@@ -6126,6 +6222,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Soda Can Project 2 1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5086976456803500099, guid: 8b7796a5222a6744e8c49231d3fb1277, type: 3}
+      propertyPath: m_TagString
+      value: outline
+      objectReference: {fileID: 0}
     - target: {fileID: 5607899139367770873, guid: 8b7796a5222a6744e8c49231d3fb1277, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.630405
@@ -6256,6 +6356,10 @@ PrefabInstance:
     - target: {fileID: 1252687729517630, guid: a8cba3361c8f7724e8899289f1efa8cc, type: 3}
       propertyPath: m_Name
       value: forestpack_roadSign_westEast_1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1252687729517630, guid: a8cba3361c8f7724e8899289f1efa8cc, type: 3}
+      propertyPath: m_TagString
+      value: outline
       objectReference: {fileID: 0}
     - target: {fileID: 4009941363576130, guid: a8cba3361c8f7724e8899289f1efa8cc, type: 3}
       propertyPath: m_LocalScale.x
@@ -6498,6 +6602,10 @@ PrefabInstance:
     - target: {fileID: 4549167233962222605, guid: 1e3a0f243d2847d48a6bd3a88b09012f, type: 3}
       propertyPath: m_Name
       value: Soda Can Project 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549167233962222605, guid: 1e3a0f243d2847d48a6bd3a88b09012f, type: 3}
+      propertyPath: m_TagString
+      value: outline
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7066,6 +7174,10 @@ PrefabInstance:
     - target: {fileID: 4959071552885434579, guid: 5b28e6042ebb4cc42a7625d49c3fd877, type: 3}
       propertyPath: m_Name
       value: Burger prefab (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4959071552885434579, guid: 5b28e6042ebb4cc42a7625d49c3fd877, type: 3}
+      propertyPath: m_TagString
+      value: outline
       objectReference: {fileID: 0}
     - target: {fileID: 5509146846172370631, guid: 5b28e6042ebb4cc42a7625d49c3fd877, type: 3}
       propertyPath: m_LocalScale.x
@@ -7924,6 +8036,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: QuestionMark (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7166021258659367062, guid: f95a1700b0140654c823b51da43ee397, type: 3}
+      propertyPath: m_TagString
+      value: outline
+      objectReference: {fileID: 0}
     - target: {fileID: 7510037094404346412, guid: f95a1700b0140654c823b51da43ee397, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12.270588
@@ -8505,6 +8621,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Burger prefab (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 4959071552885434579, guid: 5b28e6042ebb4cc42a7625d49c3fd877, type: 3}
+      propertyPath: m_TagString
+      value: outline
+      objectReference: {fileID: 0}
     - target: {fileID: 5509146846172370631, guid: 5b28e6042ebb4cc42a7625d49c3fd877, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.2499999
@@ -8700,6 +8820,10 @@ PrefabInstance:
     - target: {fileID: 4959071552885434579, guid: 5b28e6042ebb4cc42a7625d49c3fd877, type: 3}
       propertyPath: m_Name
       value: Burger prefab (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4959071552885434579, guid: 5b28e6042ebb4cc42a7625d49c3fd877, type: 3}
+      propertyPath: m_TagString
+      value: outline
       objectReference: {fileID: 0}
     - target: {fileID: 5509146846172370631, guid: 5b28e6042ebb4cc42a7625d49c3fd877, type: 3}
       propertyPath: m_LocalScale.x
@@ -9468,6 +9592,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BOOM
       objectReference: {fileID: 0}
+    - target: {fileID: 2204304118273246011, guid: 801ffab6dd449a248a52d66aaf75e717, type: 3}
+      propertyPath: m_TagString
+      value: outline
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -9599,6 +9727,10 @@ PrefabInstance:
     - target: {fileID: 4959071552885434579, guid: 5b28e6042ebb4cc42a7625d49c3fd877, type: 3}
       propertyPath: m_Name
       value: Burger prefab (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4959071552885434579, guid: 5b28e6042ebb4cc42a7625d49c3fd877, type: 3}
+      propertyPath: m_TagString
+      value: outline
       objectReference: {fileID: 0}
     - target: {fileID: 5509146846172370631, guid: 5b28e6042ebb4cc42a7625d49c3fd877, type: 3}
       propertyPath: m_LocalScale.x
@@ -9939,6 +10071,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BOOM (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2204304118273246011, guid: 801ffab6dd449a248a52d66aaf75e717, type: 3}
+      propertyPath: m_TagString
+      value: outline
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -10101,6 +10237,10 @@ PrefabInstance:
     - target: {fileID: 4959071552885434579, guid: 5b28e6042ebb4cc42a7625d49c3fd877, type: 3}
       propertyPath: m_Name
       value: Burger prefab (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4959071552885434579, guid: 5b28e6042ebb4cc42a7625d49c3fd877, type: 3}
+      propertyPath: m_TagString
+      value: outline
       objectReference: {fileID: 0}
     - target: {fileID: 5509146846172370631, guid: 5b28e6042ebb4cc42a7625d49c3fd877, type: 3}
       propertyPath: m_LocalScale.x
@@ -10538,6 +10678,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Soda Can Project 2 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4549167233962222605, guid: 1e3a0f243d2847d48a6bd3a88b09012f, type: 3}
+      propertyPath: m_TagString
+      value: outline
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10709,6 +10853,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Soda Can Project 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5086976456803500099, guid: 8b7796a5222a6744e8c49231d3fb1277, type: 3}
+      propertyPath: m_TagString
+      value: outline
+      objectReference: {fileID: 0}
     - target: {fileID: 5607899139367770873, guid: 8b7796a5222a6744e8c49231d3fb1277, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.630405
@@ -10765,6 +10913,10 @@ PrefabInstance:
     - target: {fileID: 4959071552885434579, guid: 5b28e6042ebb4cc42a7625d49c3fd877, type: 3}
       propertyPath: m_Name
       value: burger (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4959071552885434579, guid: 5b28e6042ebb4cc42a7625d49c3fd877, type: 3}
+      propertyPath: m_TagString
+      value: outline
       objectReference: {fileID: 0}
     - target: {fileID: 5509146846172370631, guid: 5b28e6042ebb4cc42a7625d49c3fd877, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10863,6 +11015,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BOOM
       objectReference: {fileID: 0}
+    - target: {fileID: 2204304118273246011, guid: 801ffab6dd449a248a52d66aaf75e717, type: 3}
+      propertyPath: m_TagString
+      value: outline
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -10882,6 +11038,10 @@ PrefabInstance:
     - target: {fileID: 7166021258659367062, guid: f95a1700b0140654c823b51da43ee397, type: 3}
       propertyPath: m_Name
       value: QuestionMark
+      objectReference: {fileID: 0}
+    - target: {fileID: 7166021258659367062, guid: f95a1700b0140654c823b51da43ee397, type: 3}
+      propertyPath: m_TagString
+      value: outline
       objectReference: {fileID: 0}
     - target: {fileID: 7510037094404346412, guid: f95a1700b0140654c823b51da43ee397, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10953,3 +11113,4 @@ SceneRoots:
   - {fileID: 1548025495}
   - {fileID: 655085999}
   - {fileID: 859654899}
+  - {fileID: 283702815}
