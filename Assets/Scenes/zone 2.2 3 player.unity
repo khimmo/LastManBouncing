@@ -3199,7 +3199,7 @@ MonoBehaviour:
   shockwaveIcon: {fileID: 2094044653}
   controlsInvertedIcon: {fileID: 1749451159}
   shockBoostedIcon: {fileID: 1760882024}
-  speedBoostedIcon: {fileID: 0}
+  speedBoostedIcon: {fileID: 1537183135}
   burgerIcon: {fileID: 0}
   burgerCountText: {fileID: 0}
 --- !u!114 &655810089
@@ -3977,7 +3977,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5bf9e2ca67173c64b9c6ac1fb6b8de5d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c676e25aaadb50a44a6da02554c55ed3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6001,7 +6001,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5bf9e2ca67173c64b9c6ac1fb6b8de5d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c676e25aaadb50a44a6da02554c55ed3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7886,7 +7886,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5bf9e2ca67173c64b9c6ac1fb6b8de5d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c676e25aaadb50a44a6da02554c55ed3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

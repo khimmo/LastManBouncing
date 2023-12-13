@@ -2819,6 +2819,17 @@ MonoBehaviour:
   playerNumber: 1
   etherealDuration: 2
   isEtherealActive: 0
+--- !u!114 &561379956 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3606453492178758710, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
+  m_PrefabInstance: {fileID: 561379951}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561379952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff96a2c5c1f6e4746b198aced2253ccb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &579401144 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4922444305696846, guid: ac1cc01cb5dbf5d4f869c403b38f8a21, type: 3}
@@ -3331,7 +3342,7 @@ MonoBehaviour:
   shockwaveIcon: {fileID: 2094044653}
   controlsInvertedIcon: {fileID: 1749451159}
   shockBoostedIcon: {fileID: 1760882024}
-  speedBoostedIcon: {fileID: 0}
+  speedBoostedIcon: {fileID: 1537183135}
   burgerIcon: {fileID: 0}
   burgerCountText: {fileID: 0}
 --- !u!114 &655810089
@@ -3470,7 +3481,7 @@ MonoBehaviour:
   shockwaveIcon: {fileID: 56746843}
   controlsInvertedIcon: {fileID: 2103059704}
   shockBoostedIcon: {fileID: 956036646}
-  speedBoostedIcon: {fileID: 0}
+  speedBoostedIcon: {fileID: 1170894176}
   burgerIcon: {fileID: 0}
   burgerCountText: {fileID: 0}
 --- !u!4 &695950177 stripped
@@ -4111,7 +4122,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5bf9e2ca67173c64b9c6ac1fb6b8de5d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c676e25aaadb50a44a6da02554c55ed3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6135,7 +6146,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5bf9e2ca67173c64b9c6ac1fb6b8de5d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c676e25aaadb50a44a6da02554c55ed3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7862,11 +7873,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29e70347644b7c04d93065d13e042f0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerScript: {fileID: 3606453491742137703}
+  playerScript: {fileID: 561379956}
   shockwaveIcon: {fileID: 2027976919}
   controlsInvertedIcon: {fileID: 1644572454}
   shockBoostedIcon: {fileID: 1984451315}
-  speedBoostedIcon: {fileID: 0}
+  speedBoostedIcon: {fileID: 2103711701}
   burgerIcon: {fileID: 0}
   burgerCountText: {fileID: 0}
 --- !u!114 &1458382418
@@ -8121,7 +8132,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5bf9e2ca67173c64b9c6ac1fb6b8de5d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c676e25aaadb50a44a6da02554c55ed3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9441,7 +9452,7 @@ MonoBehaviour:
   shockwaveIcon: {fileID: 1184307795}
   controlsInvertedIcon: {fileID: 1476348089}
   shockBoostedIcon: {fileID: 1191160771}
-  speedBoostedIcon: {fileID: 0}
+  speedBoostedIcon: {fileID: 798558742}
   burgerIcon: {fileID: 0}
   burgerCountText: {fileID: 0}
 --- !u!1 &1770242711
@@ -12557,7 +12568,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5bf9e2ca67173c64b9c6ac1fb6b8de5d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c676e25aaadb50a44a6da02554c55ed3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
