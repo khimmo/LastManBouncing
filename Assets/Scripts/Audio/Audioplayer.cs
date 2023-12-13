@@ -8,10 +8,14 @@ public class Audioplayer : MonoBehaviour
     [SerializeField] AudioSource explosionPower_Up;
     [SerializeField] AudioSource jumpSound;
     [SerializeField] AudioSource dizzy_PowerUp;
+    [SerializeField] AudioSource hitting_tree;
+    [SerializeField] AudioSource zoneShrink;
+    [SerializeField] AudioSource timer;
     
     public void PowerUP()
     {
         powerUp_PickUp.Play();
+
     }
 
     public void Explosion()
@@ -28,6 +32,23 @@ public class Audioplayer : MonoBehaviour
     {
         dizzy_PowerUp.Play();
     }
+
+    public void Tree_Falling()
+    {
+        hitting_tree.Play();
+    }
+
+    public void Zone_Shrink()
+    {
+        zoneShrink.Play();
+    }
+
+    public void TimeWarp()
+    {
+        timer.Play();
+    }
+
+
 
 
 }

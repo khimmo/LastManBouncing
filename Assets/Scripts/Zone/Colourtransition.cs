@@ -14,9 +14,13 @@ public class Colourtransition : MonoBehaviour
     [SerializeField] ZoneShrink zoneShrink;
 
 
+    public Audioplayer audioplayer;
+
+
     private void Start()
     {
         zoneShrink = FindObjectOfType<ZoneShrink>();
+        audioplayer = FindAnyObjectByType<Audioplayer>();
     }
 
     public void PlayAnimation()
