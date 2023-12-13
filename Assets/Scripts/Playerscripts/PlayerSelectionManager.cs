@@ -3,12 +3,32 @@ using UnityEngine.SceneManagement;
 
 public class PlayerSelectionManager : MonoBehaviour
 {
-    public void SelectNumberOfPlayers(int numberOfPlayers)
+    public void SelectPlayersAndStartGame(int numberOfPlayers)
     {
-        // Stores the number of players
-        PlayerPrefs.SetInt("NumberOfPlayers", numberOfPlayers);
+        
 
-        // Load the game scene, ENTER THE NAME OF THE CURRENT MAIN SCENE HERE
-        SceneManager.LoadScene("zone 2.1 Khalid 1");
+        // Determine the scene based on number of players assigned later to the buttons
+        string sceneName = "";
+        switch (numberOfPlayers)
+        {
+            case 2:
+                sceneName = "zone 2.2";
+                break;
+            case 3:
+                sceneName = "zone 2.2 3 player";
+                break;
+            case 4:
+                sceneName = "zone 2.2 4 player";
+                break;
+
+                return;
+
+            //I LOVE SWITCH CASES THEY LOOK SO CLEAN
+
+
+        }
+
+       
+        SceneManager.LoadScene(sceneName);
     }
 }
