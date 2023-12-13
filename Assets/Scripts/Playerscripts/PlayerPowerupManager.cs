@@ -15,10 +15,12 @@ public class PlayerPowerupManager : MonoBehaviour
 
     private bool hasEtherealPowerup = false;
     private int originalLayer;
+    public MeshRenderer meshRenderer;
 
     void Start()
     {
         originalLayer = gameObject.layer;
+        meshRenderer = gameObject.GetComponent<MeshRenderer>();
     }
 
     void Update()
@@ -29,6 +31,8 @@ public class PlayerPowerupManager : MonoBehaviour
         {
             StartCoroutine(ActivateEthereal());
             hasEtherealPowerup = false;
+            meshRenderer.enabled = false;
+
         }
     }
 
@@ -36,11 +40,15 @@ public class PlayerPowerupManager : MonoBehaviour
     {
         isEtherealActive = true;
         ChangeLayerToEthereal();
+        Debug.Log("Ethereal Active");
+        
 
         yield return new WaitForSeconds(etherealDuration);
 
         RestoreOriginalLayer();
         isEtherealActive = false;
+        meshRenderer.enabled = true;
+        Debug.Log("Ehereal Inactive");
     }
 
     private void ChangeLayerToEthereal()

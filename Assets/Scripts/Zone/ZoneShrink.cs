@@ -42,7 +42,14 @@ public class ZoneShrink : MonoBehaviour
     
     [SerializeField] public int zoneIndex = 0;
     [SerializeField] private TextMeshProUGUI timerText;
- 
+
+    public PowerupSpawner spawner;
+
+    void Start()
+    {
+        spawner = GetComponent<PowerupSpawner>();
+    }
+
     void Timer()
     {
         timer -= Time.deltaTime;
@@ -58,11 +65,15 @@ public class ZoneShrink : MonoBehaviour
 
     void ShrinkZone()
     {
+        
+
         if (timer <= 0 && zoneIndex == 0)
         {
             StartCoroutine(Layer1Drop());
             timer = timerDefault;
             zoneIndex++;
+            
+            
         }
 
         if (timer <= 0 && zoneIndex == 1)
@@ -105,6 +116,8 @@ public class ZoneShrink : MonoBehaviour
             StartCoroutine(Layer7drop());
             timer = timerDefault;
             zoneIndex++;
+            spawner.beginSpawning();
+
         }
     }
 
@@ -118,6 +131,8 @@ public class ZoneShrink : MonoBehaviour
         }
         yield return new WaitForSeconds(zoneDestroyTimer);
         Destroy(zoneLayer1);
+        
+        
     }
 
     IEnumerator Layer2Drop()
@@ -182,6 +197,7 @@ public class ZoneShrink : MonoBehaviour
         layer7rb.isKinematic = false;
         yield return new WaitForSeconds(zoneDestroyTimer);
         Destroy(zoneLayer7);
+        
     }
 
     void Update()
