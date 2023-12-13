@@ -343,7 +343,7 @@ public class NewBallMovementDP : MonoBehaviour
         Vector3 direction = rb.position - transform.position;
 
         // Apply a force in the calculated direction
-        rb.AddForce(direction.normalized * shockwaveForce, ForceMode.Impulse);
+        rb.AddForce(direction.normalized * shockwaveForce * rb.mass, ForceMode.Impulse);
 
         InstantiateShockwaveExplosion(transform.position);
     }
