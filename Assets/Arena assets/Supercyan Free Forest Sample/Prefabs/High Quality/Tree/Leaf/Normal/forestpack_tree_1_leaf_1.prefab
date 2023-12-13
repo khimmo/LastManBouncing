@@ -216,7 +216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnHeight: 4
-  sizePowerupPrefab: {fileID: 7489271124529799849, guid: 139b9de65516cd14bbcfa203ea01b2e9, type: 3}
-  speedPowerupPrefab: {fileID: 4549167233962222605, guid: 1e3a0f243d2847d48a6bd3a88b09012f, type: 3}
+  sizePowerupPrefab: {fileID: 4959071552885434579, guid: 5b28e6042ebb4cc42a7625d49c3fd877, type: 3}
+  speedPowerupPrefab: {fileID: 5086976456803500099, guid: 8b7796a5222a6744e8c49231d3fb1277, type: 3}
   confusionPowerupPrefab: {fileID: 7166021258659367062, guid: f95a1700b0140654c823b51da43ee397, type: 3}
   shockwavePowerupPrefab: {fileID: 2204304118273246011, guid: 801ffab6dd449a248a52d66aaf75e717, type: 3}
