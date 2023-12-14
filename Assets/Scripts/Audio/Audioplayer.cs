@@ -11,7 +11,8 @@ public class Audioplayer : MonoBehaviour
     [SerializeField] AudioSource hitting_tree;
     [SerializeField] AudioSource zoneShrink;
     [SerializeField] AudioSource timer;
-    
+    [SerializeField] AudioSource ballCollision;
+
     public void PowerUP()
     {
         powerUp_PickUp.Play();
@@ -46,6 +47,11 @@ public class Audioplayer : MonoBehaviour
     public void TimeWarp()
     {
         timer.Play();
+    }
+
+    public void BallBounce()
+    {
+        ballCollision.Play();
     }
 
 

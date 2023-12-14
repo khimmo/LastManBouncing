@@ -15,6 +15,7 @@ public class Colourtransition : MonoBehaviour
 
 
     public Audioplayer audioplayer;
+    public float animationLength;
 
 
     private void Start()
@@ -25,37 +26,37 @@ public class Colourtransition : MonoBehaviour
 
     public void PlayAnimation()
     {
-        if (zoneShrink.timer <= 10f && zoneShrink.zoneIndex == 0)
+        if (zoneShrink.timer <= animationLength && zoneShrink.zoneIndex == 0)
         {
             zone6_Animation.enabled = true;
         }
 
-        if (zoneShrink.timer <= 10f && zoneShrink.zoneIndex == 1)
+        if (zoneShrink.timer <= animationLength && zoneShrink.zoneIndex == 1)
         {
             zone5_Animation.enabled = true;
         }
 
-        if (zoneShrink.timer <= 10f && zoneShrink.zoneIndex == 2)
+        if (zoneShrink.timer <= animationLength && zoneShrink.zoneIndex == 2)
         {
             zone4_Animation.enabled = true;
         }
 
-        if (zoneShrink.timer <= 10f && zoneShrink.zoneIndex == 3)
+        if (zoneShrink.timer <= animationLength && zoneShrink.zoneIndex == 3)
         {
             zone3_Animation.enabled = true;
         }
 
-        if (zoneShrink.timer <= 10f && zoneShrink.zoneIndex == 4)
+        if (zoneShrink.timer <= animationLength && zoneShrink.zoneIndex == 4)
         {
             zone2_Animation.enabled = true;
         }
 
-        if (zoneShrink.timer <= 10f && zoneShrink.zoneIndex == 5)
+        if (zoneShrink.timer <= animationLength && zoneShrink.zoneIndex == 5)
         {
             zone1_Animation.enabled = true;
         }
 
-        if (zoneShrink.timer <= 10f && zoneShrink.zoneIndex == 6)
+        if (zoneShrink.timer <= animationLength && zoneShrink.zoneIndex == 6)
         {
             zone0_Animation.enabled = true;
         }

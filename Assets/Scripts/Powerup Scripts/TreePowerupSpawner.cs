@@ -11,6 +11,13 @@ public class TreePowerupSpawner : MonoBehaviour
     public GameObject confusionPowerupPrefab;
     public GameObject shockwavePowerupPrefab;
 
+    Audioplayer audioplayer;
+
+    private void Start()
+    {
+        audioplayer = FindObjectOfType<Audioplayer>();
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -21,6 +28,7 @@ public class TreePowerupSpawner : MonoBehaviour
         {
             
             Destroy(gameObject);
+            audioplayer.Tree_Falling();
             DropPowerup();
             // && rb.velocity.magnitude > (0 * playerMovement.originalMaxSpeed)
         }

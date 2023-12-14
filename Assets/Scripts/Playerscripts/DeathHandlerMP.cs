@@ -15,11 +15,13 @@ public class DeathHandlerMP : MonoBehaviour
 
     private int activePlayers;
     private bool roundInProgress = true;
+    Audioplayer audioplayer;
 
     void Start()
     {
         activePlayers = playerObjects.Length;
         UpdateAllScoreboards();
+        audioplayer = FindObjectOfType<Audioplayer>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -27,6 +29,7 @@ public class DeathHandlerMP : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && roundInProgress)
         {
             int playerIndex = System.Array.IndexOf(playerObjects, other.gameObject);
+            audioplayer.Zone_Shrink();
             if (playerIndex != -1)
             {
                 other.gameObject.SetActive(false);

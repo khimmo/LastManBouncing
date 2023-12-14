@@ -11,6 +11,7 @@ public class BallCollision : MonoBehaviour
     public Rigidbody rb;
     private NewBallMovementDP movementScript;
     public bool isConfuser;
+    Audioplayer audioplayer;
     
 
 
@@ -18,6 +19,7 @@ public class BallCollision : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         movementScript = GetComponent<NewBallMovementDP>();
+        audioplayer = FindObjectOfType<Audioplayer>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -27,6 +29,7 @@ public class BallCollision : MonoBehaviour
         {
             // Get the Rigidbody of the other ball
             Rigidbody otherBallRigidbody = collision.gameObject.GetComponent<Rigidbody>();
+            audioplayer.BallBounce();
 
             float massRatio = rb.mass / otherBallRigidbody.mass;
             double adjustedMassRatioDouble = Math.Pow(massRatio, 0.4f);
@@ -44,8 +47,7 @@ public class BallCollision : MonoBehaviour
 
             movementScript.StartBounceBoostCoroutine();
 
-            //NewBallMovementDP otherBallStatus = collision.gameObject.GetComponent<NewBallMovementDP>();
-            //bool isOtherBallConfuser = otherBallStatus != null && otherBallStatus.IsConfuser();
+            
         }
 
         if (collision.gameObject.CompareTag("Player") && isConfuser == true)

@@ -45,9 +45,12 @@ public class ZoneShrink : MonoBehaviour
 
     public PowerupSpawner spawner;
 
+    Audioplayer audioplayer;
+
     void Start()
     {
         spawner = GetComponent<PowerupSpawner>();
+        audioplayer = FindObjectOfType<Audioplayer>();
     }
 
     void Timer()
@@ -70,6 +73,7 @@ public class ZoneShrink : MonoBehaviour
         if (timer <= 0 && zoneIndex == 0)
         {
             StartCoroutine(Layer1Drop());
+            //audioplayer.Zone_Shrink();
             timer = timerDefault;
             zoneIndex++;
             
@@ -79,6 +83,7 @@ public class ZoneShrink : MonoBehaviour
         if (timer <= 0 && zoneIndex == 1)
         {
             StartCoroutine(Layer2Drop());
+            //audioplayer.Zone_Shrink();
             timer = timerDefault;
             zoneIndex++;
         }
@@ -86,6 +91,7 @@ public class ZoneShrink : MonoBehaviour
         if (timer <= 0 && zoneIndex == 2)
         {
             StartCoroutine(Layer3Drop());
+            //audioplayer.Zone_Shrink();
             timer = timerDefault;
             zoneIndex++;
         }
@@ -93,6 +99,7 @@ public class ZoneShrink : MonoBehaviour
         if (timer <= 0 && zoneIndex == 3)
         {
             StartCoroutine(layer4Drop());
+            //audioplayer.Zone_Shrink();
             timer = timerDefault;
             zoneIndex++;
         }
@@ -100,6 +107,7 @@ public class ZoneShrink : MonoBehaviour
         if (timer <= 0 && zoneIndex == 4)
         {
             StartCoroutine(Layer5Drop());
+            //audioplayer.Zone_Shrink();
             timer = timerDefault;
             zoneIndex++;
         }
@@ -107,6 +115,7 @@ public class ZoneShrink : MonoBehaviour
         if (timer <= 0 && zoneIndex == 5)
         {
             StartCoroutine(Layer6Drop());
+            //audioplayer.Zone_Shrink();
             timer = timerDefault;
             zoneIndex++;
         }
@@ -114,6 +123,7 @@ public class ZoneShrink : MonoBehaviour
         if(timer <= 0 && zoneIndex == 6)
         {
             StartCoroutine(Layer7drop());
+            //audioplayer.Zone_Shrink();
             timer = timerDefault;
             zoneIndex++;
             spawner.beginSpawning();
