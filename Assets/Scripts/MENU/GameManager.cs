@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -34,6 +35,11 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         PauseGame();
+
+        if (Input.GetKeyUp(KeyCode.R)) 
+        {
+            SceneManager.LoadScene("Start");
+        }
     }
 
     void PauseGame()
