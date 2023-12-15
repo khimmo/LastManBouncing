@@ -12,16 +12,16 @@ public class PlayerSelectionManager : MonoBehaviour
         switch (numberOfPlayers)
         {
             case 2:
-                sceneName = "zone 2.2";
+                sceneName = "zone 2.3 2 player";
                 break;
             case 3:
-                sceneName = "zone 2.2 3 player";
+                sceneName = "zone 2.3 3 player";
                 break;
             case 4:
-                sceneName = "zone 2.2 4 player";
+                sceneName = "zone 2.3 4 player";
                 break;
 
-                return;
+                //return;
 
             //I LOVE SWITCH CASES THEY LOOK SO CLEAN
 
