@@ -1151,9 +1151,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: be8b67b170a7ef04691ec6e32f4e3526, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ab7083b637e609647851fa6325196922, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0
+  m_Volume: 0.01
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3464,7 +3464,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &655810087
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8281,7 +8281,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1458382416
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11424,6 +11424,12 @@ MonoBehaviour:
   layer3Assets: []
   layer4Assets: []
   layer5Assets: []
+  layer6PowerUp: {fileID: 0}
+  layer5PowerUp: {fileID: 0}
+  layer4PowerUp: {fileID: 0}
+  layer3PowerUp: {fileID: 0}
+  layer2PowerUp: {fileID: 0}
+  layer1PowerUp: {fileID: 0}
   timer: 0
   timerDefault: 0
   zoneDestroyTimer: 0
@@ -12387,6 +12393,12 @@ MonoBehaviour:
   layer3Assets: []
   layer4Assets: []
   layer5Assets: []
+  layer6PowerUp: {fileID: 0}
+  layer5PowerUp: {fileID: 0}
+  layer4PowerUp: {fileID: 0}
+  layer3PowerUp: {fileID: 0}
+  layer2PowerUp: {fileID: 0}
+  layer1PowerUp: {fileID: 0}
   timer: 10
   timerDefault: 10
   zoneDestroyTimer: 6

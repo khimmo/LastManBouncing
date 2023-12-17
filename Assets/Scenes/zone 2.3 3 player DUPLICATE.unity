@@ -2624,7 +2624,6 @@ Transform:
   - {fileID: 2749103524644338143}
   - {fileID: 2749103526250297042}
   - {fileID: 1671362007}
-  - {fileID: 561379953}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &469822535 stripped
@@ -3006,147 +3005,6 @@ MonoBehaviour:
   messageText: {fileID: 0}
   player1ScoreText: {fileID: 0}
   player2ScoreText: {fileID: 0}
---- !u!1001 &561379951
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 466924200}
-    m_Modifications:
-    - target: {fileID: 630051429878035236, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 545a6f3feccc15448add3b5c1efa6e9f, type: 2}
-    - target: {fileID: 2749103525545232259, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -39.94
-      objectReference: {fileID: 0}
-    - target: {fileID: 2749103525545232259, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 104.60557
-      objectReference: {fileID: 0}
-    - target: {fileID: 2749103525545232259, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -118.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 2749103525545232259, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2749103525545232259, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2749103525545232259, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2749103525545232259, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2749103525545232259, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2749103525545232259, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2749103525545232259, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3606453492178758710, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
-      propertyPath: hasShockwave
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3606453492178758710, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
-      propertyPath: playerCamera
-      value: 
-      objectReference: {fileID: 1127481164}
-    - target: {fileID: 3606453492178758710, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
-      propertyPath: playerNumber
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3606453492178758710, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
-      propertyPath: shockwaveForce
-      value: 65
-      objectReference: {fileID: 0}
-    - target: {fileID: 3606453492178758710, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
-      propertyPath: shockwaveRadius
-      value: 7.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3606453492178758710, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
-      propertyPath: jumpForceDefault
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3606453492178758710, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
-      propertyPath: invertedControlsMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: d8aa9a6cf6e72ee4daaa9f4068d681c4, type: 2}
-    - target: {fileID: 3606453492178758710, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
-      propertyPath: shockwaveExplosionPrefab
-      value: 
-      objectReference: {fileID: 3578746465825505116, guid: b2cfe817f4c75aa47870bf57d5307f8b, type: 3}
-    - target: {fileID: 8533106654184019188, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
-      propertyPath: m_Name
-      value: Sphere4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8533106654184019188, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 9061925455920682319, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
-      propertyPath: isConfuser
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8533106654184019188, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 561379954}
-  m_SourcePrefab: {fileID: 100100000, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
---- !u!1 &561379952 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8533106654184019188, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
-  m_PrefabInstance: {fileID: 561379951}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &561379953 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2749103525545232259, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
-  m_PrefabInstance: {fileID: 561379951}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &561379954
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 561379952}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ed2cd11593245a499f312641dd00221, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerNumber: 1
-  etherealDuration: 2
-  isEtherealActive: 0
-  meshRenderer: {fileID: 0}
---- !u!114 &561379956 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3606453492178758710, guid: 9cf57800224039b409c544e7d582d3e0, type: 3}
-  m_PrefabInstance: {fileID: 561379951}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 561379952}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff96a2c5c1f6e4746b198aced2253ccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &579401144 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4922444305696846, guid: ac1cc01cb5dbf5d4f869c403b38f8a21, type: 3}
@@ -4512,12 +4370,10 @@ MonoBehaviour:
   - {fileID: 8533106655221508776}
   - {fileID: 8533106653613057445}
   - {fileID: 1671362008}
-  - {fileID: 561379952}
   playerScoreTexts:
   - {fileID: 1770242713}
   - {fileID: 1956315394}
   - {fileID: 92720521}
-  - {fileID: 1903018516}
 --- !u!1 &798558740
 GameObject:
   m_ObjectHideFlags: 0
@@ -8554,7 +8410,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1458382416
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8592,7 +8448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29e70347644b7c04d93065d13e042f0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerScript: {fileID: 561379956}
+  playerScript: {fileID: 0}
   shockwaveIcon: {fileID: 2027976919}
   controlsInvertedIcon: {fileID: 1644572454}
   shockBoostedIcon: {fileID: 1984451315}
@@ -10955,7 +10811,6 @@ MonoBehaviour:
   - {fileID: 8533106655221508776}
   - {fileID: 8533106653613057445}
   - {fileID: 1671362008}
-  - {fileID: 561379952}
   minDistance: 15
   maxDistance: 50
   smoothTime: 0.5
