@@ -29,6 +29,12 @@ public class ZoneShrink : MonoBehaviour
     [SerializeField] List<GameObject> layer3Assets = new List<GameObject>();
     [SerializeField] List<GameObject> layer4Assets = new List<GameObject>();
     [SerializeField] List<GameObject> layer5Assets = new List<GameObject>();
+    [SerializeField] GameObject layer6PowerUp;
+    [SerializeField] GameObject layer5PowerUp;
+    [SerializeField] GameObject layer4PowerUp;
+    [SerializeField] GameObject layer3PowerUp;
+    [SerializeField] GameObject layer2PowerUp;
+    [SerializeField] GameObject layer1PowerUp;
 
     // main timer variable
     [SerializeField] public float timer = 25f;
@@ -72,7 +78,9 @@ public class ZoneShrink : MonoBehaviour
 
         if (timer <= 0 && zoneIndex == 0)
         {
+            
             StartCoroutine(Layer1Drop());
+            Destroy(layer6PowerUp);
             //audioplayer.Zone_Shrink();
             timer = timerDefault;
             zoneIndex++;
@@ -83,6 +91,7 @@ public class ZoneShrink : MonoBehaviour
         if (timer <= 0 && zoneIndex == 1)
         {
             StartCoroutine(Layer2Drop());
+            Destroy(layer5PowerUp);
             //audioplayer.Zone_Shrink();
             timer = timerDefault;
             zoneIndex++;
@@ -91,6 +100,7 @@ public class ZoneShrink : MonoBehaviour
         if (timer <= 0 && zoneIndex == 2)
         {
             StartCoroutine(Layer3Drop());
+            Destroy(layer5PowerUp);
             //audioplayer.Zone_Shrink();
             timer = timerDefault;
             zoneIndex++;
@@ -99,6 +109,7 @@ public class ZoneShrink : MonoBehaviour
         if (timer <= 0 && zoneIndex == 3)
         {
             StartCoroutine(layer4Drop());
+            Destroy(layer4PowerUp);
             //audioplayer.Zone_Shrink();
             timer = timerDefault;
             zoneIndex++;
@@ -107,6 +118,7 @@ public class ZoneShrink : MonoBehaviour
         if (timer <= 0 && zoneIndex == 4)
         {
             StartCoroutine(Layer5Drop());
+            Destroy(layer3PowerUp);
             //audioplayer.Zone_Shrink();
             timer = timerDefault;
             zoneIndex++;
@@ -115,6 +127,7 @@ public class ZoneShrink : MonoBehaviour
         if (timer <= 0 && zoneIndex == 5)
         {
             StartCoroutine(Layer6Drop());
+            Destroy(layer2PowerUp);
             //audioplayer.Zone_Shrink();
             timer = timerDefault;
             zoneIndex++;
@@ -123,6 +136,7 @@ public class ZoneShrink : MonoBehaviour
         if(timer <= 0 && zoneIndex == 6)
         {
             StartCoroutine(Layer7drop());
+            Destroy(layer1PowerUp);
             //audioplayer.Zone_Shrink();
             timer = timerDefault;
             zoneIndex++;

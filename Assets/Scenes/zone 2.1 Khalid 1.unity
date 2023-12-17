@@ -2162,6 +2162,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messageText: {fileID: 0}
+  player1ScoreText: {fileID: 0}
+  player2ScoreText: {fileID: 0}
 --- !u!4 &579401144 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4922444305696846, guid: ac1cc01cb5dbf5d4f869c403b38f8a21, type: 3}
@@ -2906,6 +2908,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messageText: {fileID: 1272339536}
+  player1ScoreText: {fileID: 0}
+  player2ScoreText: {fileID: 0}
 --- !u!1 &807113137
 GameObject:
   m_ObjectHideFlags: 0
@@ -4459,6 +4463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47a9eb7286f0a8048a5bac3d31480bf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  players: []
   minDistance: 10
   maxDistance: 50
   smoothTime: 0.5
@@ -5137,6 +5142,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messageText: {fileID: 1272339536}
+  player1ScoreText: {fileID: 0}
+  player2ScoreText: {fileID: 0}
 --- !u!114 &1272339536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7489,11 +7496,18 @@ MonoBehaviour:
   layer3Assets: []
   layer4Assets: []
   layer5Assets: []
+  layer6PowerUp: {fileID: 0}
+  layer5PowerUp: {fileID: 0}
+  layer4PowerUp: {fileID: 0}
+  layer3PowerUp: {fileID: 0}
+  layer2PowerUp: {fileID: 0}
+  layer1PowerUp: {fileID: 0}
   timer: 0
   timerDefault: 0
   zoneDestroyTimer: 0
   zoneIndex: 0
   timerText: {fileID: 0}
+  spawner: {fileID: 0}
 --- !u!4 &1958898590
 Transform:
   m_ObjectHideFlags: 0
@@ -8191,11 +8205,18 @@ MonoBehaviour:
   layer3Assets: []
   layer4Assets: []
   layer5Assets: []
+  layer6PowerUp: {fileID: 0}
+  layer5PowerUp: {fileID: 0}
+  layer4PowerUp: {fileID: 0}
+  layer3PowerUp: {fileID: 0}
+  layer2PowerUp: {fileID: 0}
+  layer1PowerUp: {fileID: 0}
   timer: 10
   timerDefault: 10
   zoneDestroyTimer: 6
   zoneIndex: 0
   timerText: {fileID: 1125185847}
+  spawner: {fileID: 0}
 --- !u!4 &2025966398 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4475176998798634, guid: 91d4800e505e7de4dae44d7a3a9cbd1d, type: 3}
