@@ -296,32 +296,32 @@ public class NewBallMovementDP : MonoBehaviour
                 Debug.Log("Controller vibrate at 100%");
             }
 
-            if (vibrateIntensity > 0)
-            {
-                VibrateController(vibrateIntensity);
-            }
+            //if (vibrateIntensity > 0)
+            //{
+                //VibrateController(vibrateIntensity);
+            //}
         }
     }
 
-    private void VibrateController(float intensity)
-    {
+    //private void VibrateController(float intensity)
+   // {
         
-        var gamepad = Gamepad.current;
-        if (gamepad != null)
-        {
-            gamepad.SetMotorSpeeds(intensity, intensity); // Left and right motor speeds
-            Invoke("StopVibration", 0.5f); // Adjust duration as needed
-        }
-    }
+       // var gamepad = Gamepad.current;
+        //if (gamepad != null)
+        //{
+           // gamepad.SetMotorSpeeds(intensity, intensity); // Left and right motor speeds
+            //Invoke("StopVibration", 0.5f); // Adjust duration as needed
+        //}
+    //}
 
-    private void StopVibration()
-    {
-        var gamepad = Gamepad.current;
-        if (gamepad != null)
-        {
-            gamepad.SetMotorSpeeds(0, 0);
-        }
-    }
+    //private void StopVibration()
+    //{
+       // var gamepad = Gamepad.current;
+        //if (gamepad != null)
+       // {
+            //gamepad.SetMotorSpeeds(0, 0);
+        //}
+   // }
 
     public void StartBounceBoostCoroutine()
     {
