@@ -58,6 +58,7 @@ public class NewBallMovementDP : MonoBehaviour
     private Renderer ballRenderer;
 
     Audioplayer audioplayer;
+    //EtherealPowerup ethereal;
     //private float totalTransitionDuration = 2f;
 
     private void Start()
@@ -72,6 +73,7 @@ public class NewBallMovementDP : MonoBehaviour
         ballRenderer = GetComponent<Renderer>();
         originalMaterial = ballRenderer.material;
         audioplayer = FindObjectOfType<Audioplayer>();
+        //ethereal = GetComponent<EtherealPowerup>();
 
         switch (playerNumber)
         {
@@ -430,8 +432,10 @@ public class NewBallMovementDP : MonoBehaviour
             {
                 
                 Rigidbody playerRb = collider.GetComponent<Rigidbody>();
+                PlayerPowerupManager powerup = collider.GetComponent<PlayerPowerupManager>();
+
                 NewBallMovementDP playerMovement = collider.GetComponent<NewBallMovementDP>();
-                if (playerRb != null)
+                if (playerRb != null && powerup.isEtherealActive == false)
                 {
                     ApplyShockwaveForce(playerRb);
                     

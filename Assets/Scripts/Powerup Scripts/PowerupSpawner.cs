@@ -14,6 +14,7 @@ public class PowerupSpawner : MonoBehaviour
     public GameObject speedPowerupPrefab;
     public GameObject confusionPowerupPrefab;
     public GameObject shockwavePowerupPrefab;
+    public GameObject etherealPowerupPrefab;
 
     public void beginSpawning()
     {
@@ -31,7 +32,7 @@ public class PowerupSpawner : MonoBehaviour
             Vector3 spawnPosition = new Vector3(randomPosition.x, spawnHeight, randomPosition.y) + transform.position;
 
             
-            int randomNumber = Random.Range(1, 5);
+            int randomNumber = Random.Range(1, 6);
             
 
             
@@ -53,6 +54,11 @@ public class PowerupSpawner : MonoBehaviour
                     Instantiate(shockwavePowerupPrefab, spawnPosition, Quaternion.identity);
                     Debug.Log("Spawned " + randomNumber);
                     break;
+                case 5:
+                    Instantiate(etherealPowerupPrefab, spawnPosition, Quaternion.identity);
+                    Debug.Log("Spawned " + randomNumber);
+                    break;
+
                 default:
                     Debug.Log("Invalid # for powerup instantiation.");
                     break;
