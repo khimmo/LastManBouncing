@@ -23,5 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ADIL zone 2.3 3 player.unity
     guid: 78830085096fc944d94198dd8394b538
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: c467b922150ca5f4189fb8beaa21e3ac, type: 2}
   m_UseUCBPForAssetBundles: 0

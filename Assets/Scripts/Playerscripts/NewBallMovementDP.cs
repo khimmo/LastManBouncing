@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.DualShock;
+
 
 
 public class NewBallMovementDP : MonoBehaviour
@@ -226,7 +229,7 @@ public class NewBallMovementDP : MonoBehaviour
         
     }
 
-    void OnCollisionEnter(Collision collision)
+    /* void OnCollisionEnter(Collision collision)
     {
         //Linearly scales vibration intensity on landing at speeds between 15 (0%) and 30 (100%).
 
@@ -259,7 +262,7 @@ public class NewBallMovementDP : MonoBehaviour
         landCheck = false;
 
 
-    }
+    } 
 
     void Vibrate()
     {
@@ -270,6 +273,52 @@ public class NewBallMovementDP : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
         landCheck = true;
+    } */
+
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("GROUND"))
+        {
+            float verticalVelocity = collision.relativeVelocity.y;
+            float vibrateIntensity = 0f;
+
+            if (Mathf.Abs(verticalVelocity) > 20f && Mathf.Abs(verticalVelocity) < 30f)
+            {
+                vibrateIntensity = (Mathf.Abs(verticalVelocity) - 15) / 15;
+                Debug.Log("Controller vibrate at " + vibrateIntensity * 100 + "%");
+            }
+            else if (Mathf.Abs(verticalVelocity) > 30f)
+            {
+                vibrateIntensity = 1;
+                Debug.Log("Controller vibrate at 100%");
+            }
+
+            if (vibrateIntensity > 0)
+            {
+                VibrateController(vibrateIntensity);
+            }
+        }
+    }
+
+    private void VibrateController(float intensity)
+    {
+        
+        var gamepad = Gamepad.current;
+        if (gamepad != null)
+        {
+            gamepad.SetMotorSpeeds(intensity, intensity); // Left and right motor speeds
+            Invoke("StopVibration", 0.5f); // Adjust duration as needed
+        }
+    }
+
+    private void StopVibration()
+    {
+        var gamepad = Gamepad.current;
+        if (gamepad != null)
+        {
+            gamepad.SetMotorSpeeds(0, 0);
+        }
     }
 
     public void StartBounceBoostCoroutine()

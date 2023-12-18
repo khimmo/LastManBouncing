@@ -6,16 +6,19 @@ public class PlayerPowerupManager : MonoBehaviour
     public enum PlayerNumber
     {
         Player1,
-        Player2
+        Player2,
+        PLayer3,
+        Player4
     }
 
     public PlayerNumber playerNumber;
     public float etherealDuration = 2f;
     public bool isEtherealActive;
 
-    private bool hasEtherealPowerup = false;
+    public bool hasEtherealPowerup = false;
     private int originalLayer;
     public MeshRenderer meshRenderer;
+    
 
     void Start()
     {
@@ -25,8 +28,8 @@ public class PlayerPowerupManager : MonoBehaviour
 
     void Update()
     {
-        string etherealActivationButton = playerNumber == PlayerNumber.Player1 ? "Fire3_P1" : "Fire3_P2";
-
+        //string etherealActivationButton = playerNumber == PlayerNumber.Player1 ? "Fire3_P1" : "Fire3_P2"; //I LOVE THIS NOTATION
+        string etherealActivationButton = "Fire3_" + playerNumber.ToString();
         if (hasEtherealPowerup && Input.GetButtonDown(etherealActivationButton))
         {
             StartCoroutine(ActivateEthereal());
@@ -54,7 +57,8 @@ public class PlayerPowerupManager : MonoBehaviour
     private void ChangeLayerToEthereal()
     {
         // Set to a layer that does not collide with the other player
-        gameObject.layer = LayerMask.NameToLayer(playerNumber == PlayerNumber.Player1 ? "Player2" : "Player1");
+        //gameObject.layer = LayerMask.NameToLayer(playerNumber == PlayerNumber.Player1 ? "Player2" : "Player1");
+        gameObject.layer = LayerMask.NameToLayer("Ethereal");
     }
 
     private void RestoreOriginalLayer()
