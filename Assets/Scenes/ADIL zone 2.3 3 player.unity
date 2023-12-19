@@ -4898,6 +4898,7 @@ MonoBehaviour:
   playerNumber: 1
   etherealDuration: 2
   isEtherealActive: 0
+  hasEtherealPowerup: 0
   meshRenderer: {fileID: 0}
 --- !u!114 &561379956 stripped
 MonoBehaviour:
@@ -5722,12 +5723,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScript: {fileID: 1671362009}
+  powerupScript: {fileID: 0}
   shockwaveIcon: {fileID: 2094044653}
   controlsInvertedIcon: {fileID: 1749451159}
   shockBoostedIcon: {fileID: 1760882024}
   speedBoostedIcon: {fileID: 1537183135}
   burgerIcon: {fileID: 0}
   burgerCountText: {fileID: 0}
+  etherealBuffIcon: {fileID: 0}
+  etherealActiveIcon: {fileID: 0}
+  etherealBuffChildIcon: {fileID: 0}
+  shockwaveChildIcon: {fileID: 0}
 --- !u!114 &655810089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5892,12 +5898,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScript: {fileID: 3606453491228136042}
+  powerupScript: {fileID: 0}
   shockwaveIcon: {fileID: 56746843}
   controlsInvertedIcon: {fileID: 2103059704}
   shockBoostedIcon: {fileID: 956036646}
   speedBoostedIcon: {fileID: 1170894176}
   burgerIcon: {fileID: 0}
   burgerCountText: {fileID: 0}
+  etherealBuffIcon: {fileID: 0}
+  etherealActiveIcon: {fileID: 0}
+  etherealBuffChildIcon: {fileID: 0}
+  shockwaveChildIcon: {fileID: 0}
 --- !u!4 &695950177 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5509146846172370631, guid: 5b28e6042ebb4cc42a7625d49c3fd877, type: 3}
@@ -13862,12 +13873,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScript: {fileID: 561379956}
+  powerupScript: {fileID: 0}
   shockwaveIcon: {fileID: 2027976919}
   controlsInvertedIcon: {fileID: 1644572454}
   shockBoostedIcon: {fileID: 1984451315}
   speedBoostedIcon: {fileID: 2103711701}
   burgerIcon: {fileID: 0}
   burgerCountText: {fileID: 0}
+  etherealBuffIcon: {fileID: 0}
+  etherealActiveIcon: {fileID: 0}
+  etherealBuffChildIcon: {fileID: 0}
+  shockwaveChildIcon: {fileID: 0}
 --- !u!114 &1458382418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14177,6 +14193,7 @@ MonoBehaviour:
   playerNumber: 1
   etherealDuration: 2
   isEtherealActive: 0
+  hasEtherealPowerup: 0
   meshRenderer: {fileID: 0}
 --- !u!1 &1518625007
 GameObject:
@@ -14983,6 +15000,7 @@ MonoBehaviour:
   playerNumber: 0
   etherealDuration: 2
   isEtherealActive: 0
+  hasEtherealPowerup: 0
   meshRenderer: {fileID: 0}
 --- !u!1 &1634140806
 GameObject:
@@ -15603,6 +15621,7 @@ MonoBehaviour:
   playerNumber: 1
   etherealDuration: 2
   isEtherealActive: 0
+  hasEtherealPowerup: 0
   meshRenderer: {fileID: 0}
 --- !u!1 &1673738954
 GameObject:
@@ -16592,12 +16611,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScript: {fileID: 3606453491742137703}
+  powerupScript: {fileID: 0}
   shockwaveIcon: {fileID: 1184307795}
   controlsInvertedIcon: {fileID: 1476348089}
   shockBoostedIcon: {fileID: 1191160771}
   speedBoostedIcon: {fileID: 798558742}
   burgerIcon: {fileID: 0}
   burgerCountText: {fileID: 0}
+  etherealBuffIcon: {fileID: 0}
+  etherealActiveIcon: {fileID: 0}
+  etherealBuffChildIcon: {fileID: 0}
+  shockwaveChildIcon: {fileID: 0}
 --- !u!1 &1770242711
 GameObject:
   m_ObjectHideFlags: 0
@@ -19983,6 +20007,7 @@ MonoBehaviour:
   speedPowerupPrefab: {fileID: 5086976456803500099, guid: 8b7796a5222a6744e8c49231d3fb1277, type: 3}
   confusionPowerupPrefab: {fileID: 7166021258659367062, guid: f95a1700b0140654c823b51da43ee397, type: 3}
   shockwavePowerupPrefab: {fileID: 2204304118273246011, guid: 801ffab6dd449a248a52d66aaf75e717, type: 3}
+  etherealPowerupPrefab: {fileID: 0}
 --- !u!1 &2021460758
 GameObject:
   m_ObjectHideFlags: 0

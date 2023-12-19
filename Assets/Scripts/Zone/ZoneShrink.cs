@@ -16,6 +16,7 @@ public class ZoneShrink : MonoBehaviour
     [SerializeField] private Rigidbody layer6rb;
     [SerializeField] private Rigidbody layer7rb;
 
+
     [SerializeField] public GameObject zoneLayer1;
     [SerializeField] public GameObject zoneLayer2;
     [SerializeField] public GameObject zoneLayer3;
@@ -23,6 +24,7 @@ public class ZoneShrink : MonoBehaviour
     [SerializeField] public GameObject zoneLayer5;
     [SerializeField] public GameObject zoneLayer6;
     [SerializeField] public GameObject zoneLayer7;
+    [SerializeField] Transform lastZone;
 
     [SerializeField] List<GameObject> layer1Assets = new List<GameObject>();
     [SerializeField] List<GameObject> layer2Assets = new List<GameObject>();
@@ -38,12 +40,14 @@ public class ZoneShrink : MonoBehaviour
 
     // main timer variable
     [SerializeField] public float timer = 25f;
+    public float shrinkSpeed = 0.5f;
 
     // timer reset variable
     public float timerDefault = 25f;
 
     // destroy zone timer.( used in co routine)
     public float zoneDestroyTimer = 3f;
+    public bool isLastZone= false;
 
     
     [SerializeField] public int zoneIndex = 0;
@@ -221,12 +225,29 @@ public class ZoneShrink : MonoBehaviour
         layer7rb.isKinematic = false;
         yield return new WaitForSeconds(zoneDestroyTimer);
         Destroy(zoneLayer7);
+       // yield return new WaitForSeconds(10);
+        LastZone();
         
+    }
+
+    private void LastZone()
+    {
+        isLastZone = true;
+        Vector3 newScale = lastZone.localScale - new Vector3(shrinkSpeed, shrinkSpeed, 0f) * Time.deltaTime;
+        newScale = new Vector3(Mathf.Max(newScale.x, 0f), Mathf.Max(newScale.y, 0f),lastZone.localScale.z);
+        lastZone.localScale = newScale;
+
     }
 
     void Update()
     {
         Timer();
         ShrinkZone();
+        if(isLastZone)
+        {
+            LastZone();
+        }
+       
+
     }
 }

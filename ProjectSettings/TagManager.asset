@@ -15,6 +15,7 @@ TagManager:
   - GROUND
   - Wall
   - outline
+  - slowdownpowerup
   layers:
   - Default
   - TransparentFX

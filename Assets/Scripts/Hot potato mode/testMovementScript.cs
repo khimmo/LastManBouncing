@@ -7,17 +7,17 @@ using UnityEngine.InputSystem.DualShock;
 
 
 
-public class NewBallMovementDP : MonoBehaviour
+public class testMovementScript : MonoBehaviour
 {
     public enum PlayerNumber
     {
         Player1,
-        Player2, 
+        Player2,
         Player3,
         Player4
     }
 
-    public PlayerNumber playerNumber;  
+    public PlayerNumber playerNumber;
 
     public float moveForce;
     public float moveForceDefault;
@@ -53,6 +53,7 @@ public class NewBallMovementDP : MonoBehaviour
     public float verticalVelocity;
     public float vibrateIntensity;
     public bool isPowerUp;
+    public bool istagged;
 
     public Material invertedControlsMaterial; // Assign the material with inverted controls texture in the Inspector
     private Material originalMaterial;
@@ -305,12 +306,11 @@ public class NewBallMovementDP : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            if (collision.gameObject.GetComponent<NewBallMovementDP>().isPowerUp == true)
+            if (collision.gameObject.GetComponent<testMovementScript>().isPowerUp == true)
             {
                 Debug.Log(collision.gameObject);
                 StartCoroutine(SlowDown_Active());
             }
-
         }
     }
 
@@ -495,7 +495,7 @@ public class NewBallMovementDP : MonoBehaviour
     IEnumerator SlowDown_Active()
     {
         Debug.Log("slow down");
-       // isPowerUp = false;
+        // isPowerUp = false;
         float temp = originalMaxSpeed;
         originalMaxSpeed = originalMaxSpeed / 2;
         yield return new WaitForSeconds(10);
@@ -506,10 +506,26 @@ public class NewBallMovementDP : MonoBehaviour
 
     private void OnCollisionExit(Collision other)
     {
+        // comparing player tag with game object and making ispowerUp  bool false.
         if (other.gameObject.CompareTag("Player"))
         {
             isPowerUp = false;
-        }
+            //making istagged true and calling the delay function using coroutine.
+            if (other.gameObject.GetComponent<testMovementScript>().istagged == true)
+            {
+                Debug.Log(other.gameObject);
+                other.gameObject.GetComponent<testMovementScript>().istagged = false;
+                StartCoroutine(Delay());
+            }
+        } 
     }
+     // waiting for ).3 seconds before making IsTagged bool back to true.
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(0.3f);
+        istagged = true;
+    }
+
+    
 
 }
